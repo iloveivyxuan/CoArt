@@ -2,60 +2,73 @@
 <html>
 
 <head>
-    <title>Blockly - Loading with Webpack</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-        }
+  <title>Creative Art</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
 
-        #blocklyDiv {
-            height: 100%;
-        }
+    main {
+      display: inline-block;
+      height: 100%;
+      width: 30%;
+      vertical-align: top;
+    }
 
-        #blocklyButton {
-            float: right;
-        }
-    </style>
+    #blocklyDiv {
+      height: 100%;
+      display: inline-block;
+      width: 60%;
+    }
+
+    #blocklyButton {
+      float: right;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+  <script>
+    let t = 0;
+
+    function setup() {
+      createCanvas(330, 330);
+    }
+  </script>
 </head>
 
 <body>
-    <nav>
-        <a href="/index.html">Default</a>
-        <a href="/generator.html">Custom generator</a>
-        <a href="/locale.html">Custom locale</a>
-        <button id="blocklyButton">Convert</button>
-    </nav>
-    <div id='blocklyDiv'>
-    </div>
+  <nav>
+    <a href="/index.html">Default</a>
+    <button id="blocklyButton">Convert</button>
+  </nav>
 
-    <script type='text/javascript' src='./index.js'></script>
+  <div id='blocklyDiv'>
+  </div>
 
-    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-        <block type="controls_ifelse"></block>
-        <block type="logic_compare"></block>
-        <block type="logic_operation"></block>
-        <block type="controls_repeat_ext">
-            <value name="TIMES">
-                <shadow type="math_number">
-                    <field name="NUM">10</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="logic_operation"></block>
-        <block type="logic_negate"></block>
-        <block type="logic_boolean"></block>
-        <block type="logic_null" disabled="true"></block>
-        <block type="logic_ternary"></block>
-        <block type="text_charAt">
-            <value name="VALUE">
-                <block type="variables_get">
-                    <field name="VAR">text</field>
-                </block>
-            </value>
-        </block>
-    </xml>
+  <main>
+  </main>
+
+  <script type='text/javascript' src='./index.js'></script>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <category name="Category 1">
+      <block type="procedures_defnoreturn">
+        <field name="NAME">do something</field>
+        <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      </block>
+    </category>
+    <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+    <category name="Circle">
+      <block type="draw_circle"></block>
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </category>
+  </xml>
 </body>
 
 </html>
