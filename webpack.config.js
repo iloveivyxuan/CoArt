@@ -6,9 +6,7 @@ module.exports = {
   target: 'web',
   mode: 'development',
   entry: {
-    index: './src/index.js',
-    generator: './src/generator.js',
-    locale: './src/locale.js'
+    index: './src/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
