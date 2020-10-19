@@ -6,13 +6,19 @@
     "audit": "npm audit fix",
     "update": "npm update",
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "bundle": "webpack --config webpack.config.js",
+    "prestart": "npm run bundle"
   },
   "dependencies": {
     "blockly": "^3.20200924.3",
     "copy-webpack-plugin": "^5.1.2",
+    "express": "^4.17.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.0"
   }
 }

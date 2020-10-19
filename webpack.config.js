@@ -1,12 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   target: 'web',
   mode: 'development',
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    blob_tutorial: './src/blob_tutorial.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
