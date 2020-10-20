@@ -53,6 +53,7 @@ Blockly.Blocks['rotate_by_degree'] = {
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("degree");
+    this.setInputsInline(true);
     this.setColour(400);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -73,7 +74,7 @@ function rotate_by_degree(degree) {
 
 function draw_rectangle(position_x, position_y, width, height, color) {
   stroke(color);
-  rect(10, 10, 100, 100);
+  rect(position_x, position_y, width, height);
 }
 
 window.draw_rectangle = draw_rectangle;
