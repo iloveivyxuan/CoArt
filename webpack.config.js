@@ -8,7 +8,8 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    blob_tutorial: './src/blob_tutorial.js'
+    blob_tutorial: './src/blob_tutorial.js',
+    rectangle_tutorial: './src/rectangle_tutorial.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),

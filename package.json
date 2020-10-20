@@ -6,7 +6,7 @@
     "audit": "npm audit fix",
     "update": "npm update",
     "start": "node server.js",
-    "dev-start": "webpack-dev-server",
+    "dev-server": "webpack-dev-server",
     "build": "webpack",
     "bundle": "webpack --config webpack.config.js",
     "prestart": "npm run bundle"
