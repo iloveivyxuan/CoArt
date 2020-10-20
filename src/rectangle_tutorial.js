@@ -1,86 +1,9 @@
 import * as Blockly from 'blockly';
-import { draw_blob } from "./block_definitions/index";
+import { draw_blob, drawRectangle, rotateByDegree } from "./block_definitions/index";
 
 window.draw_blob = draw_blob;
-
-Blockly.Blocks['draw_rectangle'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Draw a Rectangle");
-    this.appendValueInput("position_x")
-        .setCheck(null)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("PositionX");
-    this.appendValueInput("position_y")
-        .setCheck(null)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("PositionY");
-    this.appendValueInput("width")
-        .setCheck(null)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("width");
-    this.appendValueInput("height")
-        .setCheck(null)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("height");
-    this.appendValueInput("color")
-        .setCheck(null)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Color");
-    this.setColour(10);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['draw_rectangle'] = function(block) {
-  var position_x = Blockly.JavaScript.valueToCode(block, 'position_x', Blockly.JavaScript.ORDER_ATOMIC);
-  var position_y = Blockly.JavaScript.valueToCode(block, 'position_y', Blockly.JavaScript.ORDER_ATOMIC);
-  var width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
-  var height = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
-  var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'draw_rectangle('+position_x+','+position_y+', '+width+','+height+', '+color+');\n';
-  return code;
-};
-
-Blockly.Blocks['rotate_by_degree'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Rotate");
-    this.appendValueInput("degree")
-        .setCheck(null)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("degree");
-    this.appendDummyInput()
-        .appendField("°");
-    this.setInputsInline(true);
-    this.setColour(400);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['rotate_by_degree'] = function(block) {
-  var degree = Blockly.JavaScript.valueToCode(block, 'degree', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'rotate_by_degree('+degree+');\n';
-  return code;
-};
-
-function rotate_by_degree(degree) {
-  rotate(2*PI / (180 / degree));
-}
-
-function draw_rectangle(position_x, position_y, width, height, color) {
-  stroke(color);
-  rect(position_x, position_y, width, height);
-}
-
-window.draw_rectangle = draw_rectangle;
-window.rotate_by_degree = rotate_by_degree;
+window.drawRectangle = drawRectangle;
+window.rotateByDegree = rotateByDegree;
 
 document.addEventListener("DOMContentLoaded", function () {
   const workspace = Blockly.inject('blocklyDiv',
