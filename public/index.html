@@ -2,36 +2,18 @@
 <html>
 <head>
   <title>Creative Art</title>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
-
-    main {
-      display: inline-block;
-      height: 100%;
-      width: 30%;
-      vertical-align: top;
-    }
-
-    #blocklyDiv {
-      height: 100%;
-      display: inline-block;
-      width: 60%;
-    }
-
-    #blocklyButton {
-      float: right;
-    }
-  </style>
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/index.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   <script>
     let t = 0;
 
     function setup() {
-      createCanvas(330, 330);
+      createCanvas(350, 350);
+    }
+
+    function draw() {
+      background("#fff");
     }
   </script>
 </head>
@@ -41,14 +23,16 @@
     <a href="/index.html">Play Ground</a>
     <a href="/blob_tutorial.html">Blob Tutorial</a>
     <a href="/rectangle_tutorial.html">Rectangle Tutorial</a>
-    <button id="blocklyButton">Convert</button>
   </nav>
 
-  <div id='blocklyDiv'>
-  </div>
+  <div class="container">
+    <div id='blocklyDiv'>
+    </div>
 
-  <main>
-  </main>
+    <main>
+      <button id="blocklyButton">Convert</button>
+    </main>
+  </div>
 
   <script type='text/javascript' src='./index.js'></script>
 

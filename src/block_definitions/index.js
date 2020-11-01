@@ -1,4 +1,5 @@
 require("./random_function");
+require("./move_to_center");
 import { draw_blob } from "./draw_blob_function";
 import { drawRectangle } from "./draw_rectangle";
 import { rotateByDegree } from "./rotate_by_degree";

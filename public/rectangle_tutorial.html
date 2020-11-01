@@ -2,35 +2,13 @@
 <html>
 <head>
   <title>Creative Art</title>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
-
-    main {
-      display: inline-block;
-      height: 100%;
-      width: 30%;
-      vertical-align: top;
-    }
-
-    #blocklyDiv {
-      height: 100%;
-      display: inline-block;
-      width: 60%;
-    }
-
-    #blocklyButton {
-      float: right;
-    }
-  </style>
+  <link rel="stylesheet" href="./styles/global.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   <script>
     let t = 0;
 
     function setup() {
+      background("#fff");
       createCanvas(340, 340);
       noFill();
     }
@@ -42,14 +20,16 @@
     <a href="/index.html">Play Ground</a>
     <a href="/blob_tutorial.html">Blob Tutorial</a>
     <a href="/rectangle_tutorial.html">Rectangle Tutorial</a>
-    <button id="blocklyButton">Convert</button>
   </nav>
 
-  <div id='blocklyDiv'>
-  </div>
+  <div class="container">
+    <div id='blocklyDiv'>
+    </div>
 
-  <main>
-  </main>
+    <main>
+      <button id="blocklyButton">Convert</button>
+    </main>
+  </div>
 
   <script type='text/javascript' src='./rectangle_tutorial.js'></script>
 
@@ -72,6 +52,7 @@
     <block type="variables_get">
       <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">step</field>
     </block>
+    <block type="move_to_center"></block>
     <block type="draw_rectangle" id="K4#S/H~dz;G_g$51z4pV">
       <value name="position_x">
         <block type="math_number" id="N:^A[SbM2]6lA;wG658">

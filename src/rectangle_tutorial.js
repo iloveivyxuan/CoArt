@@ -77,8 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       geval(`
         window.draw = function() {
-          background("#fff")
-          translate(width/2, height/2);
+          background("#ffe");
           `+ code +`
         }
       `);
