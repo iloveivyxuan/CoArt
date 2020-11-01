@@ -3,23 +3,30 @@
 <head>
   <title>Creative Art</title>
   <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/rectangle_tutorial.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   <script>
     let t = 0;
 
     function setup() {
-      background("#fff");
       createCanvas(340, 340);
+      background("#fff");
       noFill();
     }
   </script>
 </head>
 
 <body>
-  <nav>
+  <nav class="bavbar">
     <a href="/index.html">Play Ground</a>
     <a href="/blob_tutorial.html">Blob Tutorial</a>
     <a href="/rectangle_tutorial.html">Rectangle Tutorial</a>
+  </nav>
+
+  <nav>
+    <a href="/index.html">Challenge 1</a>
+    <a href="/blob_tutorial.html">Challenge 2</a>
+    <a href="/rectangle_tutorial.html">Challenge 3</a>
   </nav>
 
   <div class="container">
@@ -27,16 +34,20 @@
     </div>
 
     <main>
-      <button id="blocklyButton">Convert</button>
+      <div class="buttons">
+        <button class="button" id="blocklyButton">Convert</button>
+        <button class="button" id="clearButton">Clear</button>
+      </div>
     </main>
   </div>
 
   <script type='text/javascript' src='./rectangle_tutorial.js'></script>
+  <script type='text/javascript' src='./main.js'></script>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <block type="procedures_defnoreturn">
       <field name="NAME">draw</field>
-      <comment pinned="false" h="80" w="160">Draw function will excute inside blocks</comment>
+      <comment pinned="false" h="80" w="160">Draw function will be executed repeatedly</comment>
     </block>
     <block type="variables_set">
       <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">step</field>

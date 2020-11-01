@@ -9,7 +9,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     blob_tutorial: './src/blob_tutorial.js',
-    rectangle_tutorial: './src/rectangle_tutorial.js'
+    rectangle_tutorial: './src/rectangle_tutorial.js',
+    main: './src/main.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),

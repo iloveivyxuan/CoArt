@@ -33,6 +33,18 @@ main {
   margin-left: 20px;
 }
 
+.buttons {
+  width: 350px;
+}
+
+.buttons .button {
+  display: inline-block;
+}
+
+#clearButton {
+  float: right;
+}
+
 #blocklyDiv {
   height: 100%;
   display: inline-block;

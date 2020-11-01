@@ -75,12 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(code)
     var geval = eval;
     try {
-      geval(`
-        window.draw = function() {
-          background("#ffe");
-          `+ code +`
-        }
-      `);
+      geval(code);
     } catch (e) {
       alert(e);
     }
