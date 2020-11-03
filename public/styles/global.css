@@ -25,13 +25,9 @@ nav a {
   flex-direction: row;
 }
 
-/*main {
-  display: inline-block;
-  height: 100%;
-  width: 370px;
-  vertical-align: top;
-  margin-left: 20px;
-}*/
+main {
+  margin-bottom: 30px;
+}
 
 .visualization {
   height: 100%;
@@ -42,6 +38,7 @@ nav a {
 
 .buttons {
   width: 350px;
+  margin-bottom: 10px;
 }
 
 .buttons .button {
@@ -57,12 +54,12 @@ nav a {
   float: right;
 }
 
+#blocklyButton {
+  margin-right: 10px;
+}
+
 #blocklyDiv {
   height: 100%;
   display: inline-block;
   flex: 1;
-}
-
-#blocklyButton {
-  margin-bottom: 10px;
 }
