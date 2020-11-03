@@ -1,3 +1,16 @@
 nav.bavbar {
   border-bottom: 1px solid #ddd;
 }
+
+.challenge_buttons {
+  padding: 10px 20px;
+}
+
+.challenge_des {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#demo {
+  margin-top: 40px;
+}

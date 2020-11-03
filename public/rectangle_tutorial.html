@@ -6,13 +6,23 @@
   <link rel="stylesheet" href="./styles/rectangle_tutorial.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   <script>
-    let t = 0;
-
     function setup() {
-      createCanvas(340, 340);
+      createCanvas(350, 350);
       background("#fff");
       noFill();
     }
+
+    var sketch = function(p) {
+      p.setup = function() {
+        p.createCanvas(350, 350);
+      }
+
+      p.draw = function() {
+        p.background('#fff');
+      }
+    }
+
+    var demo = new p5(sketch, 'demo');
   </script>
 </head>
 
@@ -23,22 +33,34 @@
     <a href="/rectangle_tutorial.html">Rectangle Tutorial</a>
   </nav>
 
-  <nav>
-    <a href="/index.html">Challenge 1</a>
-    <a href="/blob_tutorial.html">Challenge 2</a>
-    <a href="/rectangle_tutorial.html">Challenge 3</a>
+  <nav class="challenge_buttons">
+    <button class="challenge_button" data-index=0>Challenge 0</button>
+    <button class="challenge_button" data-index=1>Challenge 1</button>
+    <button class="challenge_button" data-index=2>Challenge 2</button>
+    <button class="challenge_button" data-index=3>Challenge 3</button>
+    <button class="challenge_button" data-index=4>Challenge 4</button>
+    <button class="challenge_button" data-index=5>Challenge 5</button>
   </nav>
+
+  <div class="challenge_des" id="challangeDes"></div>
 
   <div class="container">
     <div id='blocklyDiv'>
     </div>
 
-    <main>
+    <div class="visualization">
       <div class="buttons">
         <button class="button" id="blocklyButton">Convert</button>
+        <button class="button" id="codeButton">Code</button>
+        <button class="button" id="saveButton">Save</button>
         <button class="button" id="clearButton">Clear</button>
       </div>
-    </main>
+      <main id="main"></main>
+       <div class="buttons">
+        <button class="button" id="answerButton">Show answer</button>
+      </div>
+      <div id="demo"></div>
+    </div>
   </div>
 
   <script type='text/javascript' src='./rectangle_tutorial.js'></script>
@@ -50,10 +72,10 @@
       <comment pinned="false" h="80" w="160">Draw function will be executed repeatedly</comment>
     </block>
     <block type="variables_set">
-      <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">step</field>
+      <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">degree</field>
     </block>
     <block type="math_change">
-      <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">step</field>
+      <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">degree</field>
       <value name="DELTA">
         <shadow type="math_number">
           <field name="NUM">1</field>
@@ -61,7 +83,7 @@
       </value>
     </block>
     <block type="variables_get">
-      <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">step</field>
+      <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">degree</field>
     </block>
     <block type="move_to_center"></block>
     <block type="draw_rectangle" id="K4#S/H~dz;G_g$51z4pV">

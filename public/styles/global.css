@@ -25,8 +25,15 @@ nav a {
   flex-direction: row;
 }
 
-main {
+/*main {
   display: inline-block;
+  height: 100%;
+  width: 370px;
+  vertical-align: top;
+  margin-left: 20px;
+}*/
+
+.visualization {
   height: 100%;
   width: 370px;
   vertical-align: top;
@@ -42,6 +49,11 @@ main {
 }
 
 #clearButton {
+  float: right;
+  margin-right: 10px;
+}
+
+#saveButton {
   float: right;
 }
 
