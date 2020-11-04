@@ -588,6 +588,201 @@ const randomChallenges = [
         </block>
       </xml>
     `
+  }, {
+    blocks: `
+      <xml xmlns="https://developers.google.com/blockly/xml">
+        <variables>
+          <variable id="AGenXV]55]#?X1M%8$HZ">n</variable>
+        </variables>
+        <block type="procedures_defnoreturn" id="/6dc@*t,sy6Qh9xirbym" x="107" y="2">
+          <field name="NAME">draw</field>
+          <comment pinned="false" h="80" w="160">Draw function will be executed repeatedly</comment>
+          <statement name="STACK">
+            <block type="move_to_center" id="4rgZZ*n8iK?@Mgw|miHQ">
+              <next>
+                <block type="controls_repeat_ext" id=";M;7mw.ZauLXQ_*n%AM,">
+                  <value name="TIMES">
+                    <shadow type="math_number" id="4KvXGCxL2?YF,%rxRsR6">
+                      <field name="NUM">6</field>
+                    </shadow>
+                  </value>
+                  <statement name="DO">
+                    <block type="rotate_by_degree" id="{]9-4MvoU%weP^fljfb}">
+                      <value name="degree">
+                        <block type="math_number" id="M8di%]IZ%fO(?Jm!+K?2">
+                          <field name="NUM">60</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="variables_set" id="(fhw)y*chc@Vg$YDGn7N">
+                          <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                          <value name="VALUE">
+                            <block type="math_number" id="t~4@uwLK__gD)ZJuIJX|">
+                              <field name="NUM">2</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="controls_repeat_ext" id="umMP?z.?EM|P|/s:W*Yo">
+                              <value name="TIMES">
+                                <shadow type="math_number" id="9s07bed}3W{q.B*zlrF">
+                                  <field name="NUM">150</field>
+                                </shadow>
+                              </value>
+                              <statement name="DO">
+                                <block type="rotate_by_degree" id="M)5#twwy+uOP[S?*/|*1">
+                                  <value name="degree">
+                                    <block type="math_number" id="8s~=l!qe#{Q%?Zmc$+I">
+                                      <field name="NUM">3</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="draw_rectangle" id="C[YGRB!jiL+~0Qw(8Peo">
+                                      <value name="position_x">
+                                        <block type="variables_get" id="d_lN0wr*E?.KpM+xSK)l">
+                                          <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                        </block>
+                                      </value>
+                                      <value name="position_y">
+                                        <block type="variables_get" id="cXKmSE4NY7u1@Fj:LeDg">
+                                          <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                        </block>
+                                      </value>
+                                      <value name="width">
+                                        <block type="variables_get" id="$B2A8F#(~tq?9{;jf(#">
+                                          <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                        </block>
+                                      </value>
+                                      <value name="height">
+                                        <block type="variables_get" id="^U+i/AS_574)Sd#^BY:x">
+                                          <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                        </block>
+                                      </value>
+                                      <value name="color">
+                                        <block type="colour_picker" id=":3.d!v6q0LK:]U=2zW|:">
+                                          <field name="COLOUR">#cccccc</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="math_change" id="^Q;!BU|q6q)$#ro[aC8">
+                                          <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                          <value name="DELTA">
+                                            <shadow type="math_number" id="zw**3=72G-q(eX#Ls}tA">
+                                              <field name="NUM">10</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="rotate_by_degree" id="so[UD4FV6uePhSj2.$9Y">
+                      <value name="degree">
+                        <block type="math_number" id="{/;wE2QF(~@6Lw;NDK-">
+                          <field name="NUM">3</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="controls_repeat_ext" id="P|9faQgu3xTdtp!ie-)~">
+                          <value name="TIMES">
+                            <shadow type="math_number" id="cEk~^,-O#QQy_#/UjLHD">
+                              <field name="NUM">6</field>
+                            </shadow>
+                          </value>
+                          <statement name="DO">
+                            <block type="rotate_by_degree" id="}4G+|!:~QXLUY*;HhC!">
+                              <value name="degree">
+                                <block type="math_number" id="*pU26o]dq[mGXz$VH/JN">
+                                  <field name="NUM">60</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="variables_set" id="HGO]Yy(s3/n7:QlC=fsw">
+                                  <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                  <value name="VALUE">
+                                    <block type="math_number" id="m#??N[gKm4~wE($/Vhbl">
+                                      <field name="NUM">2</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="controls_repeat_ext" id="~B3EaU_tt{*Oh2Q{7@2k">
+                                      <value name="TIMES">
+                                        <shadow type="math_number" id=":Av31!]DTQQ=N+?71QVc">
+                                          <field name="NUM">150</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="rotate_by_degree" id="Ol}XF1N8w{J4:rbjWJ[N">
+                                          <value name="degree">
+                                            <block type="math_number" id="PP4OURKqF?fS%-i(0ywV">
+                                              <field name="NUM">3</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="draw_rectangle" id="]({7l=]6awPRQKjnXAXw">
+                                              <value name="position_x">
+                                                <block type="variables_get" id="lXio[4rtp6PCET#PxDE{">
+                                                  <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                                </block>
+                                              </value>
+                                              <value name="position_y">
+                                                <block type="variables_get" id="$IKV;LG+t~X=60*3xLEu">
+                                                  <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                                </block>
+                                              </value>
+                                              <value name="width">
+                                                <block type="variables_get" id="Ccg)96q0W[4iVOZ5UR%{">
+                                                  <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                                </block>
+                                              </value>
+                                              <value name="height">
+                                                <block type="variables_get" id="+ScAxPwKj_UJ@e3n~Ug">
+                                                  <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                                </block>
+                                              </value>
+                                              <value name="color">
+                                                <block type="colour_picker" id="ufz)whz0WF@.{S|0%:zA">
+                                                  <field name="COLOUR">#993300</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="math_change" id="jxLQvmAjQFIg_|NLb}qo">
+                                                  <field name="VAR" id="AGenXV]55]#?X1M%8$HZ">n</field>
+                                                  <value name="DELTA">
+                                                    <shadow type="math_number" id=";g*B2l[hh2J4)W_+7tn(">
+                                                      <field name="NUM">10</field>
+                                                    </shadow>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </xml>
+    `
   }
 ];
 
@@ -682,7 +877,7 @@ const challenges = [
       </xml>
     `
   }, {
-    description: "Can you rotate the square by 4 degrees?",
+    description: "Can you draw a squre and rotate it by 4 degrees?",
     blocks: `
       <xml xmlns="https://developers.google.com/blockly/xml">
         <block type="procedures_defnoreturn" id="xI{zeGY;piZg;j3c3w(4" x="235" y="226">
@@ -1350,6 +1545,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById('blocklyButton');
 
   button.addEventListener('click', function () {
+    window.draw = function() {
+      background("#fff");
+    }
     var xml = Blockly.Xml.workspaceToDom(workspace);
     var xml_text = Blockly.Xml.domToPrettyText(xml);
     console.log(xml_text);
@@ -1375,6 +1573,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let randomIndex = 0;
   const randomButton = document.getElementById('randomButton');
   randomButton.addEventListener('click', function() {
+    document.getElementById('challangeDes').innerHTML = `We can draw many kinds of pictures by using loop and rectangle function.`;
     document.getElementById('clearButton').click();
     workspace.clear();
     const blocks = randomChallenges[randomIndex].blocks;
