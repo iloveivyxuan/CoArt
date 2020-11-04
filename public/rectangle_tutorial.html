@@ -15,6 +15,7 @@
     var sketch = function(p) {
       p.setup = function() {
         p.createCanvas(350, 350);
+        p.noLoop();
       }
 
       p.draw = function() {
@@ -40,6 +41,7 @@
     <button class="challenge_button" data-index=3>Challenge 3</button>
     <button class="challenge_button" data-index=4>Challenge 4</button>
     <button class="challenge_button" data-index=5>Challenge 5</button>
+    <button class="random_button" id="randomButton" data-random='random'>Random Challenge</button>
   </nav>
 
   <div class="challenge_des" id="challangeDes"></div>
@@ -62,9 +64,6 @@
       <div id="demo"></div>
     </div>
   </div>
-
-  <script type='text/javascript' src='./rectangle_tutorial.js'></script>
-  <script type='text/javascript' src='./main.js'></script>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <block type="procedures_defnoreturn">
@@ -134,5 +133,8 @@
       <field name="COLOUR">#BA1BBE</field>
     </block>
   </xml>
+
+  <script type='text/javascript' src='./rectangle_tutorial.js'></script>
+  <script type='text/javascript' src='./main.js'></script>
 </body>
 </html>
