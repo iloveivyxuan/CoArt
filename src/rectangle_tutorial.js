@@ -1440,6 +1440,56 @@ const challenges = [
         }
       }
       var demo = new p5(sketch, 'demo');
+    `,
+    toolbox: `
+      <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+        <block type="procedures_defnoreturn">
+          <field name="NAME">draw</field>
+          <comment pinned="false" h="80" w="160">Draw function will be executed repeatedly</comment>
+        </block>
+        <block type="draw_rectangle" id="K4#S/H~dz;G_g$51z4pV">
+          <value name="position_x">
+            <block type="math_number" id="N:^A[SbM2]6lA;wG658">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="position_y">
+            <block type="math_number" id="mw}j%}F:5xnJu85Zz-a~">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="width">
+            <block type="math_number" id="nr4c7ienpG-V]|Na#!Ch">
+              <field name="NUM">100</field>
+            </block>
+          </value>
+          <value name="height">
+            <block type="math_number" id="ri7t+ZKzUsmnNlTIXvkU">
+              <field name="NUM">100</field>
+            </block>
+          </value>
+          <value name="color">
+            <block type="colour_picker" id="%6w^?.=[6EZRW-t573v">
+              <field name="COLOUR">#993399</field>
+            </block>
+          </value>
+        </block>
+        <block type="rotate_by_degree">
+          <value name="degree">
+            <block type="math_number" id="=Q$h[lZEU}d^2Fj!h7,">
+              <field name="NUM">4</field>
+            </block>
+          </value>
+        </block>
+        <block type="controls_repeat_ext">
+          <value name="TIMES">
+            <shadow type="math_number">
+              <field name="NUM">40</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="move_to_center"></block>
+      </xml>
     `
   }
 ];
