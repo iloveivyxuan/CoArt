@@ -15,9 +15,9 @@
     "blockly": "^3.20200924.3",
     "copy-webpack-plugin": "^5.1.2",
     "express": "^4.17.1",
+    "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "html-webpack-plugin": "^4.5.0"
+    "webpack-dev-server": "^3.11.0"
   }
 }
