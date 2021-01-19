@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Creative Art World</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+  <link rel="stylesheet" href="./styles/home_page.css">
+  <script type="text/javascript">
+    // code is from https://www.openprocessing.org/sketch/838545
+    let kMax;
+    let step = 0.01;
+    let n = 140;
+    let radius = 80;
+    let inter = 0.3;
+    let maxNoise = 500;
+
+    let noiseProg = (x) => (x*x);
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      colorMode(HSB, 1);
+      angleMode(DEGREES);
+      noFill();
+      kMax = random(0.6, 1.0);
+    }
+
+    function draw() {
+      background(0.1);
+      let t = frameCount/100;
+      for (let i = n; i > 0; i--) {
+        let alpha = 1 - (i / n);
+        stroke(0.9, alpha);
+        let size = radius + i * inter;
+        let k = kMax * sqrt(i/n);
+        let noisiness = maxNoise * (i / n);
+        blob(size, width/2, height/2, k, t - i * step, noisiness);
+      }
+    }
+
+    function blob(size, xCenter, yCenter, k, t, noisiness) {
+      beginShape();
+      let angleStep = 360 / 10;
+      for (let theta = 0; theta <= 360 + 2 * angleStep; theta += angleStep) {
+        let r1, r2;
+        r1 = cos(theta)+1;
+        r2 = sin(theta)+1;
+        let r = size + noise(k * r1,  k * r2, t) * noisiness;
+        let x = xCenter + r * cos(theta);
+        let y = yCenter + r * sin(theta);
+        curveVertex(x, y);
+      }
+      endShape();
+    }
+  </script>
+</head>
+<body>
+  <a href="">START</a>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ module.exports = {
   target: 'web',
   mode: 'development',
   entry: {
+    home_page: './src/home_page.js',
     index: './src/index.js',
     blob_tutorial: './src/blob_tutorial.js',
     rectangle_tutorial: './src/rectangle_tutorial.js',
