@@ -10,7 +10,7 @@ body {
 	display: flex;
 }
 
-a {
+.cmd {
 	color: #fff;
 	position: absolute;
 	top: calc(50% - 25px);
@@ -20,9 +20,30 @@ a {
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
+}
+
+.cmd a {
 	text-decoration: none;
 }
 
-a:hover {
-	border-bottom: 3px solid;
+/* flicker animation taken from http://goonhub.com/secret */
+.flicker {
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    animation: flicker 1s infinite linear;
+}
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

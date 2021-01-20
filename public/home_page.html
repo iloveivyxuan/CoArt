@@ -5,13 +5,14 @@
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   <link rel="stylesheet" href="./styles/home_page.css">
   <script type="text/javascript">
-    // code is from https://www.openprocessing.org/sketch/838545
     let kMax;
     let step = 0.01;
     let n = 140;
     let radius = 80;
     let inter = 0.3;
     let maxNoise = 500;
+    let clear = false;
+    let enlarge = 0;
 
     let noiseProg = (x) => (x*x);
 
@@ -26,6 +27,9 @@
     function draw() {
       background(0.1);
       let t = frameCount/100;
+      if (clear) {
+        radius = radius + enlarge;
+      }
       for (let i = n; i > 0; i--) {
         let alpha = 1 - (i / n);
         stroke(0.9, alpha);
@@ -34,6 +38,7 @@
         let noisiness = maxNoise * (i / n);
         blob(size, width/2, height/2, k, t - i * step, noisiness);
       }
+      enlarge += 0.1;
     }
 
     function blob(size, xCenter, yCenter, k, t, noisiness) {
@@ -53,7 +58,10 @@
   </script>
 </head>
 <body>
-  <a href="">START</a>
-
+  <div class="cmd" id="cmd">
+    <a id="startButton">START</a>
+    <span id="content"></span><span class="flicker">&nbsp;</span>
+  </div>
+  <script type='text/javascript' src='./home_page.js'></script>
 </body>
 </html>

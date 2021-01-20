@@ -1,7 +1,7 @@
 import * as Blockly from 'blockly';
 import { draw_blob } from "./block_definitions/index";
 
-window.draw_blob = draw_blob
+window.draw_blob = draw_blob;
 
 document.addEventListener("DOMContentLoaded", function () {
   const workspace = Blockly.inject('blocklyDiv',
