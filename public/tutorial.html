@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutorial</title>
+	<link rel="stylesheet" href="./styles/global.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+  <script>
+    let t = 0;
+
+    function setup() {
+      createCanvas(350, 350);
+      background("#fff");
+    }
+  </script>
+</head>
+<body>
+	<div class="container">
+    <div id='blocklyDiv'>
+    </div>
+
+    <div class="visualization">
+      <div class="buttons">
+        <button class="button" id="blocklyButton">Convert</button>
+        <button class="button" id="codeButton">Code</button>
+        <button class="button" id="saveButton">Save</button>
+        <button class="button" id="clearButton">Clear</button>
+      </div>
+      <main id="main"></main>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='./index.js'></script>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <block type="ellipse">
+      <field name="position">center</field>
+      <field name="width">100</field>
+      <field name="height">100</field>
+    </block>
+  </xml>
+</body>
+</html>

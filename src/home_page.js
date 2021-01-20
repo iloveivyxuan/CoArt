@@ -20,7 +20,7 @@ const getStarted = () => {
 
   setTimeout(() => {
   	document.body.addEventListener('click', () => {
-	  	window.location.href = "./index.html"
+	  	window.location.href = "./tutorial.html"
 	  }, 100); 
   });
 }
