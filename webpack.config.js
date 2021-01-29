@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   target: 'web',
@@ -19,6 +20,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build')
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CopyPlugin([
       {
