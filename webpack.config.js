@@ -15,8 +15,8 @@ module.exports = {
     main: './src/main.js'
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].js'
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'build')
   },
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
@@ -34,6 +34,14 @@ module.exports = {
       }
     ])
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
   devServer: {
     port: 3000
   }

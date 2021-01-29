@@ -1,5 +1,8 @@
+import p5 from 'p5';
 import * as Blockly from 'blockly';
 import { draw_blob, drawRectangle, rotateByDegree } from "./block_definitions/index";
+import './css/global.css';
+import './css/rectangle_tutorial.css';
 
 window.draw_blob = draw_blob;
 window.drawRectangle = drawRectangle;

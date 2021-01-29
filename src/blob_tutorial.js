@@ -1,5 +1,6 @@
 import * as Blockly from 'blockly';
 import { draw_blob } from "./block_definitions/index";
+import './css/global.css';
 
 window.draw_blob = draw_blob;
 

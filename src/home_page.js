@@ -1,3 +1,5 @@
+import './css/home_page.css';
+
 const fullText = "  Chapter 1 - Hello World";
 let currText = "";
 
@@ -21,7 +23,7 @@ const getStarted = () => {
   setTimeout(() => {
   	document.body.addEventListener('click', () => {
 	  	window.location.href = "./tutorial.html"
-	  }, 100); 
+	  }, 100);
   });
 }
 

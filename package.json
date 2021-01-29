@@ -6,16 +6,21 @@
     "audit": "npm audit fix",
     "update": "npm update",
     "start": "node server.js",
-    "dev-server": "webpack-dev-server",
+    "server": "webpack-dev-server",
     "build": "webpack",
     "bundle": "webpack --config webpack.config.js",
     "prestart": "npm run bundle"
   },
   "dependencies": {
     "blockly": "^3.20200924.3",
+    "p5": "^1.2.0"
+  },
+  "devDependencies": {
     "copy-webpack-plugin": "^5.1.2",
+    "css-loader": "^5.0.1",
     "express": "^4.17.1",
     "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
