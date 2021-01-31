@@ -17,16 +17,16 @@ Blockly.Blocks['ellipse'] = {
         .appendField("with height")
         .appendField(new Blockly.FieldTextInput("100"), "height");
     this.setInputsInline(false);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setColour('#8c66f7');
+  this.setTooltip("");
+  this.setHelpUrl("");
   }
 };
 
 Blockly.JavaScript['ellipse'] = function(block) {
-  var position = block.getFieldValue('position');
-  var width = block.getFieldValue('width');
-  var height = block.getFieldValue('height');
+  const position = block.getFieldValue('position');
+  const width = block.getFieldValue('width');
+  const height = block.getFieldValue('height');
   var x_coordinate;
   var y_coordinate;
   if (position === 'center') {
@@ -39,6 +39,6 @@ Blockly.JavaScript['ellipse'] = function(block) {
   	x_coordinate = str(350 - float(width/2));
   	y_coordinate = str(350 - float(height/2));
   }
-  var code = 'ellipse('+x_coordinate+', '+y_coordinate+', '+width+', '+height+')';
+  const code = 'ellipse('+x_coordinate+', '+y_coordinate+', '+width+', '+height+')';
   return code;
 };
