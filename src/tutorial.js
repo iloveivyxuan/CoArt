@@ -17,7 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const workspace = Blockly.inject('blocklyDiv',
     {
       toolbox: document.getElementById('toolbox'),
-      media: 'media/'
+      media: 'media/',
+      zoom:
+      	{
+      		controls: true,
+      		startScale: 1.0,
+      		maxScale: 3,
+      		minScale: 0.3,
+      		scaleSpeed: 1.2,
+      		pinch: true
+      	},
+      trashcan: true
     });
 
   const lang = 'JavaScript';
