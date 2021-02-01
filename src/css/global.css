@@ -81,5 +81,14 @@ main {
 }
 
 .blocklyPathDark {
+  transform: translate(0, 0);
   fill: none;
+}
+
+.geras-renderer.classic-theme .blocklyText {
+  font-size: 14px;
+}
+
+.geras-renderer.classic-theme .blocklyNonEditableText>rect, .geras-renderer.classic-theme .blocklyEditableText>rect {
+  fill-opacity: 0.8;
 }
