@@ -1,14 +1,10 @@
 import p5 from 'p5';
 import * as Blockly from 'blockly';
 import "./block_definitions/index";
+import './css/tutorial.css';
 import './css/global.css';
 
 document.addEventListener("DOMContentLoaded", function() {
-  const clearButton = document.getElementById('clearButton');
-  clearButton.addEventListener('click', function() {
-    background("#fff");
-  });
-
   const saveButton = document.getElementById('saveButton');
   saveButton.addEventListener('click', function() {
     saveCanvas('myCanvas');
@@ -37,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const code = Blockly[lang].workspaceToCode(workspace);
     const geval = eval;
     try {
+    	background("#fff");
       geval(code);
     } catch (e) {
       alert(e);
