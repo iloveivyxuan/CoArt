@@ -21,13 +21,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'tutorial.html',
+      template: './src/assets/tutorial.html',
+      chunks: ['tutorial'],
+      favicon: 'src/images/favicon.png'
+    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new CopyPlugin([
-      {
-        from: path.resolve(__dirname, 'public'),
-        to: path.resolve(__dirname, 'build')
-      }
-    ]),
     // Copy over media resources from the Blockly package
     new CopyPlugin([
       {
@@ -41,7 +41,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-      },
+      }
     ],
   },
   devServer: {

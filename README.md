@@ -8,7 +8,9 @@ Notes:
 
 # Tutorial (Draft Version)
 ### Chapter One - Hello World
-- draw a dot
+- draw a circle at center of the Canvas
+- fill the circle with color
+-
 - challenge
 
-### Chapter Two -  
+### Chapter Two -
