@@ -25,7 +25,7 @@ module.exports = {
       filename: 'tutorial.html',
       template: './src/assets/tutorial.html',
       chunks: ['tutorial'],
-      favicon: 'src/images/favicon.png'
+      favicon: './src/images/favicon.png'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     // Copy over media resources from the Blockly package
