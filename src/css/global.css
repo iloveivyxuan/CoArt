@@ -118,11 +118,6 @@ canvas {
   stroke-width: 0;
 }
 
-.blocklyPathDark {
-  transform: translate(0, 0);
-  fill: none;
-}
-
 .geras-renderer.classic-theme .blocklyText {
   font-size: 14px;
 }

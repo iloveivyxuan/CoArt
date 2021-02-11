@@ -1,5 +1,5 @@
 import p5 from 'p5';
-import * as Blockly from 'blockly';
+import Blockly from 'blockly';
 import "./block_definitions/index";
 import './css/tutorial.css';
 import './css/global.css';
