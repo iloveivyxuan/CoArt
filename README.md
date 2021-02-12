@@ -14,6 +14,6 @@ Notes:
 - Challenge 4: Understand to draw an ellipse width, height, position is necessary but filling color, stroke, or stroke weight is optional. (Guess why?)
 - Challenge 5: Understand function, argument, and statement. For a function, argument is necessary. fill, stroke, stroke weight are other functions that are optional to add or remove.
 - Challenge 6: Show codes; try to delete one line or change argument to see what happens
-- Final challenge: use ellipse blocks to draw a picture (provide demo, can switch between code and block)
+- Challenge 7 Final challenge: use ellipse blocks to draw a picture (provide demo, can switch between code and block)
 
 ### Chapter Two -

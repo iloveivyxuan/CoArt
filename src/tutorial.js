@@ -39,4 +39,25 @@ document.addEventListener("DOMContentLoaded", function() {
       alert(e);
     }
   })
+
+  // Progress Bar
+  const challengeNum = 7;
+  var currentChallenge = 2;
+
+  const generateProgressBar = (num) => {
+    var list = ``;
+    for (var i = 0; i < num; i++) {
+      if (i < currentChallenge) {
+        list += `<li class="done"></li>`
+      }
+      else if (i == currentChallenge) {
+        list += `<li class="active"></li>`
+      } else {
+        list += `<li></li>`;
+      }
+    }
+    return list
+  }
+
+  document.getElementById('progressBar').innerHTML = generateProgressBar(challengeNum);
 });
