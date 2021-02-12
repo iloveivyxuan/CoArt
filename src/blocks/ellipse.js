@@ -1,4 +1,7 @@
 import Blockly from 'blockly';
+import './stroke';
+import './stroke_weight';
+import './fill';
 
 // Ellipse with position options - center, top-left, and bottom-right
 Blockly.Blocks['simpleEllipse'] = {
@@ -188,63 +191,6 @@ Blockly.Blocks['customized_ellipse'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};
-
-Blockly.Blocks['stroke'] = {
-  init: function() {
-    this.appendValueInput("color")
-        .setCheck("")
-        .appendField("stroke");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour('#8C66F7');
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['stroke'] = function(block) {
-  var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `stroke(${color});`;
-  return code;
-};
-
-Blockly.Blocks['stroke_weight'] = {
-  init: function() {
-    this.appendValueInput("weight")
-        .setCheck("Number")
-        .appendField("stroke weight");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour('#8C66F7');
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['stroke_weight'] = function(block) {
-  var stroke_weight = Blockly.JavaScript.valueToCode(block, 'weight', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `strokeWeight('${stroke_weight}');`;
-  return code;
-};
-
-Blockly.Blocks['fill'] = {
-  init: function() {
-    this.appendValueInput("color")
-        .setCheck(null)
-        .appendField("fill");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour('#8C66F7');
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['fill'] = function(block) {
-  var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `fill(${color});`;
-  return code;
 };
 
 Blockly.JavaScript['customized_ellipse'] = function(block) {

@@ -1,5 +1,5 @@
 import * as Blockly from 'blockly';
-import { draw_blob, drawRectangle, rotateByDegree } from "./block_definitions/index";
+import { draw_blob, drawRectangle, rotateByDegree } from "./blocks/index";
 import './css/global.css';
 
 window.draw_blob = draw_blob;

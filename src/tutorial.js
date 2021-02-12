@@ -1,6 +1,6 @@
 import p5 from 'p5';
 import Blockly from 'blockly';
-import "./block_definitions/index";
+import "./blocks/index";
 import './css/tutorial.css';
 import './css/global.css';
 
