@@ -47,16 +47,15 @@
 	padding-top: 0;
 }
 
-.progress-bar li.done:before {
+.progress-bar li.done:before, .progress-bar li.current:before {
 	background-color: #856BF6;
 }
 
-.progress-bar li.done:hover {
+.progress-bar li.done:hover, .progress-bar li.current:hover {
 	padding-top: 0;
 }
 
-.progress-bar li.done:hover::before {
-	/*background-color: red;*/
+.progress-bar li.done:hover::before, .progress-bar li.current:hover::before {
 	width: 26px;
 	height: 26px;
 	cursor: pointer;
@@ -74,8 +73,4 @@
 
 .progress-bar li.done + li:after {
 	background-color: #856BF6;
-}
-
-.progress-bar li.active + li:after {
-	/*background-color: #856BF6;*/
 }

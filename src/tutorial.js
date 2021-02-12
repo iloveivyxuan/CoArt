@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const lang = 'JavaScript';
   const button = document.getElementById('blocklyButton');
 
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     const code = Blockly[lang].workspaceToCode(workspace);
     const geval = eval;
     try {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } catch (e) {
       alert(e);
     }
-  })
+  });
 
   // Progress Bar
   const challengeNum = 7;
@@ -48,16 +48,37 @@ document.addEventListener("DOMContentLoaded", function() {
     var list = ``;
     for (var i = 0; i < num; i++) {
       if (i < currentChallenge) {
-        list += `<li class="done"></li>`
+        list += `<li class="challenge done" data-challenge='${i}'></li>`
       }
       else if (i == currentChallenge) {
-        list += `<li class="active"></li>`
+        list += `<li class="challenge active current" data-challenge='${i}'></li>`
       } else {
-        list += `<li></li>`;
+        list += `<li class="challenge" data-challenge='${i}'></li>`;
       }
     }
     return list
   }
 
   document.getElementById('progressBar').innerHTML = generateProgressBar(challengeNum);
+
+  const lists = document.getElementsByClassName('challenge');
+
+  const removeActive = () => {
+    for (const list of lists) {
+      list.classList.remove('active');
+    }
+  };
+
+  for (const list of lists) {
+    list.addEventListener('click', () => {
+      const backToChallenge = list.dataset.challenge;
+      console.log(backToChallenge)
+      if (backToChallenge > currentChallenge) {
+        console.log('no')
+        return
+      }
+      removeActive();
+      list.classList.add('active');
+    });
+  }
 });
