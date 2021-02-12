@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Progress Bar
   const challengeNum = 7;
-  var currentChallenge = 2;
+  let currentChallenge = 2;
 
   const generateProgressBar = (num) => {
-    var list = ``;
-    for (var i = 0; i < num; i++) {
+    let list = ``;
+    for (let i = 0; i < num; i++) {
       if (i < currentChallenge) {
         list += `<li class="challenge done" data-challenge='${i}'></li>`
       }
@@ -72,13 +72,109 @@ document.addEventListener("DOMContentLoaded", function() {
   for (const list of lists) {
     list.addEventListener('click', () => {
       const backToChallenge = list.dataset.challenge;
-      console.log(backToChallenge)
       if (backToChallenge > currentChallenge) {
-        console.log('no')
         return
       }
       removeActive();
       list.classList.add('active');
+      toolbox = challengeBlocks[backToChallenge];
+      workspace.updateToolbox(toolbox);
     });
   }
+
+  // Challenge Blocks XML
+  const challenge1 = `
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="simpleEllipse">
+        <field name="position">center</field>
+        <field name="width">100</field>
+        <field name="height">100</field>
+      </block>
+    </xml>
+  `;
+
+  const challenge2 = `
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="basicEllipse">
+         <field name="position">center</field>
+         <field name="width">100</field>
+         <field name="height">100</field>
+         <field name="stroke">#993399</field>
+         <field name="fill">#ffccff</field>
+      </block>
+    </xml>
+  `;
+
+  const challenge3 = `
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="ellipse">
+        <field name="x-coordinate">100</field>
+        <field name="y-coordinate">100</field>
+        <field name="width">100</field>
+        <field name="height">100</field>
+        <field name="stroke">#993399</field>
+        <field name="fill">#ffccff</field>
+      </block>
+    </xml>
+  `;
+
+  const challenge4 = `
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="customized_ellipse">
+        <value name="width">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="height">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="x-coordinate">
+          <block type="math_number">
+            <field name="NUM">200</field>
+          </block>
+        </value>
+        <value name="y-coordinate">
+          <block type="math_number">
+            <field name="NUM">200</field>
+          </block>
+        </value>
+        <statement name="styles">
+          <block type="fill">
+            <value name="color">
+              <block type="colour_picker">
+                <field name="COLOUR">#ffccff</field>
+              </block>
+            </value>
+            <next>
+              <block type="stroke">
+                <value name="color">
+                  <block type="colour_picker">
+                    <field name="COLOUR">#993399</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="stroke_weight">
+                    <value name="weight">
+                      <block type="math_number">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </xml>
+  `;
+
+  const challengeBlocks = [challenge1, challenge2, challenge3, challenge4];
+
+  // Initialize toolbox
+  let toolbox = challengeBlocks[currentChallenge];
+  workspace.updateToolbox(toolbox);
 });
