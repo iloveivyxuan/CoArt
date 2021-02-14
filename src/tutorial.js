@@ -1,8 +1,10 @@
 import p5 from 'p5';
 import Blockly from 'blockly';
-import "./blocks/index";
+import './blocks/index';
 import './css/tutorial.css';
 import './css/global.css';
+import './css/modal.css';
+import { modal, toggleModal } from './js/modal.js';
 
 document.addEventListener("DOMContentLoaded", function() {
   const saveButton = document.getElementById('saveButton');
@@ -31,18 +33,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
   button.addEventListener('click', () => {
     const code = Blockly[lang].workspaceToCode(workspace);
+    console.log(code)
     const geval = eval;
     try {
     	background("#fff");
       geval(code);
+      console.log(checkCode(code));
     } catch (e) {
       alert(e);
     }
   });
 
+  // Check Code
+  const checkCode = (code) => {
+    const isSuccess =  code.includes(successCode[currentChallenge]);
+    if (isSuccess) {
+      toggleModal();
+    }
+  }
+
   // Progress Bar
   const challengeNum = 7;
-  let currentChallenge = 2;
+  let currentChallenge = 3;
 
   const generateProgressBar = (num) => {
     let list = ``;
@@ -81,6 +93,14 @@ document.addEventListener("DOMContentLoaded", function() {
       workspace.updateToolbox(toolbox);
     });
   }
+
+  // Success Conditions
+  const successCode = [
+    `ellipse`,
+    `ellipse`,
+    `ellipse`,
+    `ellipse`
+  ];
 
   // Challenge Blocks XML
   const challenge1 = `

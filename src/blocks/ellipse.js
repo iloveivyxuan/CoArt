@@ -44,6 +44,9 @@ Blockly.JavaScript['simpleEllipse'] = function(block) {
   	y_coordinate = str(350 - float(height/2));
   }
   const code = `
+    fill('#fff');
+    stroke('#000');
+    strokeWeight(1);
     ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
   `;
   return code;
