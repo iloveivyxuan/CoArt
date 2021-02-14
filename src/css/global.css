@@ -54,7 +54,7 @@ nav a {
 }
 
 main {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .visualization {
@@ -71,10 +71,33 @@ canvas {
 .buttons {
   width: 350px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.buttons .button {
+.buttons .btn {
   display: inline-block;
+}
+
+.btn.play {
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #8C66F7;
+  margin-top: 0;
+  background-image: url(../images/play-white.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 55%;
+  cursor: pointer;
+}
+
+.btn.play:hover {
+  background-color: #663FD3;
+}
+
+.btn.play:focus {
+  outline: none;
 }
 
 #clearButton {
@@ -84,10 +107,6 @@ canvas {
 
 #saveButton {
   float: right;
-}
-
-#blocklyButton {
-  margin-right: 10px;
 }
 
 #blocklyDiv {
