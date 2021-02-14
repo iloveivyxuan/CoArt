@@ -1,5 +1,6 @@
 const modal = document.querySelector('.modal');
 const modalCloseButton = document.querySelector('.modal-close');
+const modalContinueButton = document.querySelector('.btn.continue');
 
 modalCloseButton.addEventListener('click', () => {
 	toggleModal();
@@ -18,4 +19,4 @@ const toggleModal = () => {
 	}
 };
 
-export { modal, toggleModal };
+export { modal, toggleModal, modalContinueButton };

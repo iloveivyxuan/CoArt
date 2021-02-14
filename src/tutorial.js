@@ -4,7 +4,7 @@ import './blocks/index';
 import './css/tutorial.css';
 import './css/global.css';
 import './css/modal.css';
-import { modal, toggleModal } from './js/modal.js';
+import { modal, toggleModal, modalContinueButton } from './js/modal.js';
 
 document.addEventListener("DOMContentLoaded", function() {
   const saveButton = document.getElementById('saveButton');
@@ -33,12 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   button.addEventListener('click', () => {
     const code = Blockly[lang].workspaceToCode(workspace);
-    console.log(code)
     const geval = eval;
     try {
     	background("#fff");
       geval(code);
-      console.log(checkCode(code));
+      checkCode(code);
     } catch (e) {
       alert(e);
     }
@@ -52,9 +51,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  modalContinueButton.addEventListener('click', () => {
+    toggleModal();
+    document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.add('done');
+    document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.remove('current', 'active');
+    currentChallenge += 1;
+    document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.add('current', 'active');
+    toolbox = challengeBlocks[currentChallenge];
+    workspace.updateToolbox(toolbox);
+    workspace.clear();
+    background("#fff");
+  });
+
   // Progress Bar
   const challengeNum = 7;
-  let currentChallenge = 3;
+  let currentChallenge = 0;
 
   const generateProgressBar = (num) => {
     let list = ``;
@@ -91,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
       list.classList.add('active');
       toolbox = challengeBlocks[backToChallenge];
       workspace.updateToolbox(toolbox);
+      workspace.clear();
     });
   }
 
@@ -100,6 +112,11 @@ document.addEventListener("DOMContentLoaded", function() {
     `ellipse`,
     `ellipse`,
     `ellipse`
+  ];
+
+  // Challenge Descriptions
+  const challengeDes = [
+    'Drag block into the workspace.\nChange width and height to create an ellipse.'
   ];
 
   // Challenge Blocks XML
