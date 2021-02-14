@@ -29,6 +29,11 @@ body {
   margin-bottom: 20px;
 }
 
+.tip-wrapper .des {
+  color: #42474F;
+  margin: 20px 60px;
+}
+
 .main {
   width: 100%;
   height: 100%;
@@ -43,6 +48,7 @@ body {
   background-color: rgba(255,255,255,0.6);
   border-radius: 20px;
   box-sizing: border-box;
+  flex: 1;
 }
 
 nav {
@@ -72,6 +78,7 @@ canvas {
   width: 350px;
   margin-bottom: 10px;
   text-align: center;
+  position: relative;
 }
 
 .buttons .btn {
@@ -84,7 +91,6 @@ canvas {
   height: 60px;
   border-radius: 50%;
   background-color: #8C66F7;
-  margin-top: 0;
   background-image: url(../images/play-white.svg);
   background-size: 20px;
   background-repeat: no-repeat;
@@ -100,19 +106,23 @@ canvas {
   outline: none;
 }
 
-#clearButton {
+.btn.save {
+  border: none;
+  width: 20px;
+  height: 60px;
   float: right;
-  margin-right: 10px;
+  background-image: url(../images/download.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  background-position: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }
 
-#saveButton {
-  float: right;
-}
-
-#blocklyDiv {
-  height: 100%;
-  display: inline-block;
-  flex: 1;
+.btn.save:focus {
+  outline: none;
 }
 
 /* Change default style of blockly */

@@ -54,13 +54,13 @@
 	position: relative;
 }
 
-.title {
+.modal-content .title {
 	text-align: center;
 	color: #4EA88D;
 	margin-bottom: 0;
 }
 
-.des {
+.modal-content .des {
 	text-align: center;
 	color: #8c8c8c;
 }
@@ -80,7 +80,7 @@
 	border-radius: 50%;
 }
 
-.btn {
+.modal-content .btn {
 	display: block;
 	margin: 0 auto;
 	color: #fff;
@@ -91,6 +91,15 @@
 	font-size: 16px;
 	border-radius: 10px;
 	margin-top: 40px;
+	cursor: pointer;
+}
+
+.modal-content .btn:hover {
+	background-color: #278C6E;
+}
+
+.modal-content .btn:focus {
+	outline: none;
 }
 
 .icon {
