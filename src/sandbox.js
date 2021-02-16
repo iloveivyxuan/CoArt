@@ -29,13 +29,28 @@ document.addEventListener("DOMContentLoaded", function() {
   const button = document.getElementById('blocklyButton');
 
   button.addEventListener('click', () => {
-    const code = Blockly[lang].workspaceToCode(workspace);
-    const geval = eval;
-    console.log(code);
-    try {
+    var isPlay = document.getElementById('blocklyButton').classList.contains('stop');
+    if (isPlay) {
+      button.classList.remove('stop');
+      button.classList.add('play');
+      const geval = eval;
+      const code = `
+        function draw() {
+          background('#fff');
+        }
+      `;
       geval(code);
-    } catch (e) {
-      alert(e);
+    } else {
+      button.classList.remove('play');
+      button.classList.add('stop');
+      const code = Blockly[lang].workspaceToCode(workspace);
+      const geval = eval;
+      console.log(code);
+      try {
+        geval(code);
+      } catch (e) {
+        alert(e);
+      }
     }
   });
 });
