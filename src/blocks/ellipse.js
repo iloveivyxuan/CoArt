@@ -1,7 +1,4 @@
 import Blockly from 'blockly';
-import './stroke';
-import './stroke_weight';
-import './fill';
 
 // Ellipse with position options - center, top-left, and bottom-right
 Blockly.Blocks['simpleEllipse'] = {

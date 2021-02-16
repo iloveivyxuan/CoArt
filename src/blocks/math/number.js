@@ -5,7 +5,7 @@ Blockly.Blocks['number'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldNumber(0), "num");
     this.setOutput(true, null);
-    this.setColour('#9F85E8');
+    this.setColour('#E4CCF6');
  this.setTooltip("");
  this.setHelpUrl("");
   }

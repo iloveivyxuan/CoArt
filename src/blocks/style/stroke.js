@@ -7,7 +7,7 @@ Blockly.Blocks['stroke'] = {
         .appendField("stroke");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour('#8C66F7');
+    this.setColour('#777CFB');
  this.setTooltip("");
  this.setHelpUrl("");
   }
