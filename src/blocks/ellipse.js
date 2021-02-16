@@ -170,7 +170,7 @@ Blockly.JavaScript['ellipse'] = function(block) {
 Blockly.Blocks['customized_ellipse'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Draw an ellipse");
+        .appendField("ellipse");
     this.appendValueInput("width")
         .setCheck("")
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -190,6 +190,8 @@ Blockly.Blocks['customized_ellipse'] = {
     this.appendStatementInput("styles")
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour('#6742D0');
  this.setTooltip("");
  this.setHelpUrl("");
@@ -203,8 +205,10 @@ Blockly.JavaScript['customized_ellipse'] = function(block) {
   var y_coordinate = Blockly.JavaScript.valueToCode(block, 'y-coordinate', Blockly.JavaScript.ORDER_ATOMIC);
   var statements = Blockly.JavaScript.statementToCode(block, 'styles');
   var code = `
+    push();
     ${statements}
     ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
+    pop();
   `;
   return code;
 };

@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     home_page: './src/home_page.js',
     tutorial: './src/tutorial.js',
+    sandbox: './src/sandbox.js',
     index: './src/index.js',
     blob_tutorial: './src/blob_tutorial.js',
     rectangle_tutorial: './src/rectangle_tutorial.js',
@@ -25,6 +26,12 @@ module.exports = {
       filename: 'tutorial.html',
       template: './src/assets/tutorial.html',
       chunks: ['tutorial'],
+      favicon: './src/images/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'sandbox.html',
+      template: './src/assets/sandbox.html',
+      chunks: ['sandbox'],
       favicon: './src/images/favicon.png'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
