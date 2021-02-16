@@ -28,57 +28,64 @@
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Functions">
-      <block type="draw">
+      <block type="draw"></block>
     </category>
     <category name="Basic Graphic">
       <block type="customized_ellipse">
-      <value name="width">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-      <value name="height">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-      <value name="x-coordinate">
-        <block type="math_number">
-          <field name="NUM">200</field>
-        </block>
-      </value>
-      <value name="y-coordinate">
-        <block type="math_number">
-          <field name="NUM">200</field>
-        </block>
-      </value>
-      <statement name="styles">
-        <block type="fill">
-          <value name="color">
-            <block type="colour_picker">
-              <field name="COLOUR">#ffccff</field>
-            </block>
-          </value>
-          <next>
-            <block type="stroke">
-              <value name="color">
-                <block type="colour_picker">
-                  <field name="COLOUR">#993399</field>
-                </block>
-              </value>
-              <next>
-                <block type="stroke_weight">
-                  <value name="weight">
-                    <block type="math_number">
-                      <field name="NUM">3</field>
-                    </block>
-                  </value>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
+        <value name="width">
+          <block type="number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="height">
+          <block type="number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="x-coordinate">
+          <block type="number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <value name="y-coordinate">
+          <block type="number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <statement name="styles">
+          <block type="fill">
+            <value name="color">
+              <block type="color">
+                <field name="color">#ffccff</field>
+              </block>
+            </value>
+            <next>
+              <block type="stroke">
+                <value name="color">
+                  <block type="color">
+                    <field name="color">#993399</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="stroke_weight">
+                    <value name="weight">
+                      <block type="number">
+                        <field name="num">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </category>
+    <category name="Math">
+      <block type="number"></block>
+    </category>
+    <category name="Color">
+      <block type="color"></block>
     </category>
     <category name="Utils">
       <block type="get_coordinate"></block>
