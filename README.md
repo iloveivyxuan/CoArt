@@ -17,3 +17,16 @@ Notes:
 - Challenge 7 Final challenge: use ellipse blocks to draw a picture (provide demo, can switch between code and block)
 
 ### Chapter Two -
+
+
+# Technical Part
+### Features
+- Tutorial: how to use blockly, fundamental programming, generative art
+- Sandbox: provide basic blocks for users to explore
+- Commmunity: user can upload projects, other user can fork and change them
+
+###TODO List
+[] Image save in amazon S3
+[] Backend: user logIn/SignIn, Upload project
+[] Javascript part
+
