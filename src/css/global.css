@@ -120,8 +120,6 @@ canvas {
 
 .btn.stop:before {
   content: '';
-  width: 60px;
-  height: 60px;
   background-color: #fff;
   display: block;
   width: 22px;
@@ -186,4 +184,29 @@ canvas {
 
 .geras-renderer.classic-theme .blocklyNonEditableText>rect, .geras-renderer.classic-theme .blocklyEditableText>rect {
   fill-opacity: .99;
+}
+
+/* Change Category Bar Style */
+
+.blocklyToolboxDiv {
+  background-color: #fff;
+}
+
+.blocklyTreeRow {
+  margin-bottom: 0px;
+}
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+  background-color: rgba(0,0,0,0.07);
+  cursor: pointer;
+}
+
+.blocklyTreeRowContentContainer {
+  display: flex;
+  border-left: 4px solid red;
+  margin: 10px 0;
+}
+
+.blocklyTreeLabel {
+  line-height: 22px;
 }

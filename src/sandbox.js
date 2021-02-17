@@ -53,4 +53,27 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+  // Set Category Bar Style
+  const categories = document.querySelectorAll('.blocklyTreeRowContentContainer');
+  for (let category of categories) {
+    if (category.children[1].innerText == 'Functions') {
+      category.style.borderLeft = '4px solid #EA4F1E'
+    }
+    else if (category.children[1].innerText == 'Basic Graphic') {
+      category.style.borderLeft = '4px solid #5935BC'
+    }
+    else if (category.children[1].innerText == 'Style') {
+      category.style.borderLeft = '4px solid #777CFB'
+    }
+    else if (category.children[1].innerText == 'Math') {
+      category.style.borderLeft = '4px solid #E4CCF6'
+    }
+    else if (category.children[1].innerText == 'Color') {
+      category.style.borderLeft = '4px solid #FFEDED'
+    }
+    else if (category.children[1].innerText == 'Utils') {
+      category.style.borderLeft = '4px solid #F5AE24'
+    }
+  }
 });
