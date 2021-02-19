@@ -8,9 +8,11 @@ module.exports = {
   target: 'web',
   mode: 'development',
   entry: {
-    home_page: './src/home_page.js',
     tutorial: './src/tutorial.js',
     sandbox: './src/sandbox.js',
+    browse: './src/browse.js',
+    artwork: './src/artwork.js',
+    home_page: './src/home_page.js',
     index: './src/index.js',
     blob_tutorial: './src/blob_tutorial.js',
     rectangle_tutorial: './src/rectangle_tutorial.js',
@@ -32,6 +34,18 @@ module.exports = {
       filename: 'sandbox.html',
       template: './src/assets/sandbox.html',
       chunks: ['sandbox'],
+      favicon: './src/images/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'browse.html',
+      template: './src/assets/browse.html',
+      chunks: ['browse'],
+      favicon: './src/images/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'artwork.html',
+      template: './src/assets/artwork.html',
+      chunks: ['artwork'],
       favicon: './src/images/favicon.png'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
