@@ -33,13 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (isPlay) {
       button.classList.remove('stop');
       button.classList.add('play');
-      const geval = eval;
-      const code = `
-        function draw() {
-          background('#fff');
-        }
-      `;
-      geval(code);
+      document.querySelector('#main').firstElementChild.remove();
     } else {
       button.classList.remove('play');
       button.classList.add('stop');
@@ -48,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(code);
       try {
         geval(code);
+        new p5();
       } catch (e) {
         alert(e);
       }

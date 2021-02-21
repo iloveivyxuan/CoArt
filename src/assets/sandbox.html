@@ -3,10 +3,6 @@
 <head>
 	<title>Creative Art - Sandbox</title>
   <script>
-    function setup() {
-      createCanvas(350, 350);
-      background("#fff");
-    }
   </script>
 </head>
 <body>
@@ -27,8 +23,10 @@
   </div>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <category name="Functions">
+    <category name="Basic">
+      <block type="setup"></block>
       <block type="draw"></block>
+      <block type="create_canvas"></block>
     </category>
     <category name="Basic Graphic">
       <block type="customized_ellipse">
@@ -82,6 +80,13 @@
       </block>
     </category>
     <category name="Style">
+      <block type="background">
+        <value name="color">
+          <block type="color">
+            <field name="color">#ffffff</field>
+          </block>
+        </value>
+      </block>
       <block type="fill">
         <value name="color">
           <block type="color">
