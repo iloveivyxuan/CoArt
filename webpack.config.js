@@ -44,7 +44,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'artwork.html',
-      template: './src/assets/artwork.html',
+      template: './src/assets/sandbox.html',
       chunks: ['artwork'],
       favicon: './src/images/favicon.png'
     }),
