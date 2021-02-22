@@ -207,7 +207,6 @@ canvas {
 
 .blocklyTreeRowContentContainer {
   display: flex;
-  border-left: 4px solid red;
   margin: 3px 0;
 }
 

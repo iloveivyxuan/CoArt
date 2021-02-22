@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (isPlay) {
       button.classList.remove('stop');
       button.classList.add('play');
-      document.querySelector('#main').firstElementChild.remove();
+      remove();
     } else {
       button.classList.remove('play');
       button.classList.add('stop');
@@ -52,10 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
   // Set Category Bar Style
   const categories = document.querySelectorAll('.blocklyTreeRowContentContainer');
   for (let category of categories) {
-    if (category.children[1].innerText == 'Functions') {
+    if (category.children[1].innerText == 'Basic') {
       category.style.borderLeft = '4px solid #EA4F1E'
     }
-    else if (category.children[1].innerText == 'Basic Graphic') {
+    else if (category.children[1].innerText == 'Transform') {
+      category.style.borderLeft = '4px solid #17AD80'
+    }
+    else if (category.children[1].innerText == 'Shape') {
       category.style.borderLeft = '4px solid #5935BC'
     }
     else if (category.children[1].innerText == 'Style') {
