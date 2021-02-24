@@ -3,7 +3,7 @@ import Blockly from 'blockly';
 Blockly.Blocks['translate'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("create canvas")
+        .appendField("translate")
         .appendField("x")
         .appendField(new Blockly.FieldNumber(125, 0), "x")
         .appendField("y")

@@ -115,6 +115,72 @@
     </category>
     <category name="Math">
       <block type="number"></block>
+      <block type="get_integer">
+        <field name="options">round</field>
+        <field name="num">0</field>
+      </block>
+      <block type="map">
+        <value name="value">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_low">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_high">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_low">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_high">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="distance">
+        <value name="from_x">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_y">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_x">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_y">
+          <block type="number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_arithmetic">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
     </category>
     <category name="Color">
       <block type="color"></block>
