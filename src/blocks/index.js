@@ -19,6 +19,7 @@ require("./basic/create_canvas");
 require("./basic/push");
 require("./basic/pop");
 require("./transform/translate");
+require("./custom/polygon");
 import { draw_blob } from "./draw_blob_function";
 import { drawRectangle } from "./draw_rectangle";
 import { rotateByDegree } from "./rotate_by_degree";

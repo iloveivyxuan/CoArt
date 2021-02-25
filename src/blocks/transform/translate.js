@@ -5,9 +5,9 @@ Blockly.Blocks['translate'] = {
     this.appendDummyInput()
         .appendField("translate")
         .appendField("x")
-        .appendField(new Blockly.FieldNumber(125, 0), "x")
+        .appendField(new Blockly.FieldNumber(175, 0), "x")
         .appendField("y")
-        .appendField(new Blockly.FieldNumber(125, 0), "y");
+        .appendField(new Blockly.FieldNumber(175, 0), "y");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#17AD80');
