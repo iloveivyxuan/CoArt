@@ -15,12 +15,13 @@ Blockly.Blocks['axis'] = {
 Blockly.JavaScript['axis'] = function(block) {
   var code = `push();
 const step = 25;
-const min = -400;
-const max = 400;
-for (let i = min; i <= max; i += step) {
+const length = max(width, height);
+const minL = -length;
+const maxL = length;
+for (let i = minL; i <= maxL; i += step) {
   stroke('#eee');
-  line(min, i, max, i);
-  line(i, min, i, max);
+  line(minL, i, maxL, i);
+  line(i, minL, i, maxL);
   noStroke();
   fill('#444')
   textSize(10);
