@@ -19,6 +19,6 @@ Blockly.Blocks['create_canvas'] = {
 Blockly.JavaScript['create_canvas'] = function(block) {
   var width = block.getFieldValue('width');
   var height = block.getFieldValue('height');
-  var code = `createCanvas(${width}, ${height});`;
+  var code = `createCanvas(${width}, ${height});\n`;
   return code;
 };

@@ -15,10 +15,9 @@ Blockly.Blocks['draw'] = {
 Blockly.JavaScript['draw'] = function(block) {
   var statements = Blockly.JavaScript.statementToCode(block, 'draw');
   var code = `
-  	function draw() {
-  		background('#fff');
-  		${statements}
-  	}
+function draw() {
+${statements}
+}
   `;
   return code;
 };

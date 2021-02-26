@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "blockly": "^3.20200924.3",
+    "highlight.js": "^10.6.0",
     "p5": "^1.2.0"
   },
   "devDependencies": {

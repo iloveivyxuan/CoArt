@@ -15,6 +15,6 @@ Blockly.Blocks['background'] = {
 
 Blockly.JavaScript['background'] = function(block) {
   var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `background(${color});`;
+  var code = `background(${color});\n`;
   return code;
 };

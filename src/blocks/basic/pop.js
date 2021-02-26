@@ -13,6 +13,6 @@ Blockly.Blocks['pop'] = {
 };
 
 Blockly.JavaScript['pop'] = function(block) {
-  var code = `pop();`;
+  var code = `pop();\n`;
   return code;
 };

@@ -15,6 +15,6 @@ Blockly.Blocks['stroke_weight'] = {
 
 Blockly.JavaScript['stroke_weight'] = function(block) {
   var stroke_weight = Blockly.JavaScript.valueToCode(block, 'weight', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `strokeWeight('${stroke_weight}');`;
+  var code = `strokeWeight('${stroke_weight}');\n`;
   return code;
 };

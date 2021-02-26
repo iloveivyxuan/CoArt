@@ -15,6 +15,6 @@ Blockly.Blocks['stroke'] = {
 
 Blockly.JavaScript['stroke'] = function(block) {
   var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `stroke(${color});`;
+  var code = `stroke(${color});\n`;
   return code;
 };

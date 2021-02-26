@@ -15,6 +15,6 @@ Blockly.Blocks['fill'] = {
 
 Blockly.JavaScript['fill'] = function(block) {
   var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `fill(${color});`;
+  var code = `fill(${color});\n`;
   return code;
 };

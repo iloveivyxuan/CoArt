@@ -13,6 +13,6 @@ Blockly.Blocks['push'] = {
 };
 
 Blockly.JavaScript['push'] = function(block) {
-  var code = `push();`;
+  var code = `push();\n`;
   return code;
 };

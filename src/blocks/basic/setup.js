@@ -15,9 +15,9 @@ Blockly.Blocks['setup'] = {
 Blockly.JavaScript['setup'] = function(block) {
   var statements = Blockly.JavaScript.statementToCode(block, 'setup');
   var code = `
-  	function setup() {
-  		${statements}
-  	}
+function setup() {
+${statements}
+}
   `;
   return code;
 };

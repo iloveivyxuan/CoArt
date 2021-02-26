@@ -19,6 +19,6 @@ Blockly.Blocks['translate'] = {
 Blockly.JavaScript['translate'] = function(block) {
   var x = block.getFieldValue('x');
   var y = block.getFieldValue('y');
-  var code = `translate(${x}, ${y});`;
+  var code = `translate(${x}, ${y});\n`;
   return code;
 };

@@ -1,5 +1,10 @@
 import p5 from 'p5';
 import Blockly from 'blockly';
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import 'highlight.js/styles/github.css';
+
+hljs.registerLanguage('javascript', javascript);
 
 document.addEventListener("DOMContentLoaded", function() {
   const saveButton = document.getElementById('saveButton');
@@ -46,4 +51,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+  function myUpdateFunction(event) {
+    var code = Blockly.JavaScript.workspaceToCode(workspace);
+    console.log(code);
+    const highlightedCode = hljs.highlight('javascript', `${code}`).value
+    document.querySelector('pre code').innerHTML = highlightedCode;
+  }
+  workspace.addChangeListener(myUpdateFunction);
 });

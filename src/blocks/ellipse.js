@@ -168,14 +168,6 @@ Blockly.Blocks['customized_ellipse'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("ellipse");
-    this.appendValueInput("width")
-        .setCheck("")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("width");
-    this.appendValueInput("height")
-        .setCheck("")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("height");
     this.appendValueInput("x-coordinate")
         .setCheck("")
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -184,6 +176,14 @@ Blockly.Blocks['customized_ellipse'] = {
         .setCheck("")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("y-coordinate");
+    this.appendValueInput("width")
+        .setCheck("")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("width");
+    this.appendValueInput("height")
+        .setCheck("")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("height");
     this.appendStatementInput("styles")
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT);
@@ -201,11 +201,10 @@ Blockly.JavaScript['customized_ellipse'] = function(block) {
   var x_coordinate = Blockly.JavaScript.valueToCode(block, 'x-coordinate', Blockly.JavaScript.ORDER_ATOMIC);
   var y_coordinate = Blockly.JavaScript.valueToCode(block, 'y-coordinate', Blockly.JavaScript.ORDER_ATOMIC);
   var statements = Blockly.JavaScript.statementToCode(block, 'styles');
-  var code = `
-    push();
-    ${statements}
-    ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
-    pop();
+  var code = `push();
+${statements}
+  ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
+pop();\n
   `;
   return code;
 };
