@@ -22,7 +22,7 @@
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Basic" colour="#EA4F1E">
-      <block type="setup"></block>
+      <block type="setup" id="setup"></block>
       <block type="draw"></block>
       <block type="create_canvas"></block>
       <block type="push"></block>
@@ -182,9 +182,20 @@
         </value>
       </block>
     </category>
-    <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
+    <category name="Variables" colour="#a55b80" custom="VARIABLE">
+    </category>
+    <category name="System Variables" colour="#a55b80">
+      <block type="width"></block>
+      <block type="height"></block>
+      <block type="mouse_x"></block>
+      <block type="mouse_y"></block>
+      <block type="mouse_is_pressed"></block>
+      <block type="mouse_button"></block>
+    </category>
+    </category>
     <category name="Color" colour="#FFEDED">
       <block type="color"></block>
+      <block type="rgba"></block>
     </category>
     <category name="Utils" colour="#F5AE24">
       <block type="get_coordinate"></block>
@@ -193,6 +204,22 @@
     <sep></sep>
     <category name="Custom" colour="#EE8DB0">
       <block type="polygon"></block>
+    </category>
+    <sep></sep>
+    <category name="Logic" colour="#5b80a5">
+      <block type="controls_if"></block>
+      <block type="logic_compare">
+        <field name="OP">EQ</field>
+      </block>
+      <block type="logic_operation">
+        <field name="OP">AND</field>
+      </block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
     </category>
   </xml>
 </body>

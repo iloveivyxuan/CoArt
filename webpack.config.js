@@ -16,7 +16,8 @@ module.exports = {
     index: './src/index.js',
     blob_tutorial: './src/blob_tutorial.js',
     rectangle_tutorial: './src/rectangle_tutorial.js',
-    main: './src/main.js'
+    main: './src/main.js',
+    canvas: './src/js/canvas.js'
   },
   output: {
     filename: '[name].js',
@@ -45,6 +46,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'artwork.html',
       template: './src/assets/sandbox.html',
+      chunksSortMode: 'manual',
       chunks: ['artwork'],
       favicon: './src/images/favicon.png'
     }),

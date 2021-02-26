@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
       trashcan: true
     });
 
+  window.workspace = workspace;
+
   const lang = 'JavaScript';
   const button = document.getElementById('blocklyButton');
 
@@ -40,9 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       button.classList.remove('play');
       button.classList.add('stop');
+      var xml = Blockly.Xml.workspaceToDom(workspace);
+      var xml_text = Blockly.Xml.domToPrettyText(xml);
+      console.log(xml_text);
       const code = Blockly[lang].workspaceToCode(workspace);
       const geval = eval;
-      console.log(code);
       try {
         geval(code);
         new p5();
@@ -54,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function myUpdateFunction(event) {
     var code = Blockly.JavaScript.workspaceToCode(workspace);
-    console.log(code);
     const highlightedCode = hljs.highlight('processing', `${code}`).value
     document.querySelector('pre code').innerHTML = highlightedCode;
   }
   workspace.addChangeListener(myUpdateFunction);
 });
+
+export { Blockly };
