@@ -1,6 +1,6 @@
 require("./random_function");
 require("./move_to_center");
-require("./ellipse");
+require("./shape/ellipse");
 require("./math/number");
 require("./math/get_integer");
 require("./math/map");
