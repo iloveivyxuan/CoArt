@@ -204,7 +204,7 @@ Blockly.JavaScript['customized_ellipse'] = function(block) {
   var code = `push();
 ${statements}
   ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
-pop();\n
-  `;
+pop();
+`;
   return code;
 };

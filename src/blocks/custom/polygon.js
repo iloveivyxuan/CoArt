@@ -41,6 +41,6 @@ for (var i = 0; i <= ${sides}; i++) {
   vertex(x, y);
 }
 endShape();
-  `;
+`;
   return code;
 };

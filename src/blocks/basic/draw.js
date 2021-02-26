@@ -17,7 +17,6 @@ Blockly.JavaScript['draw'] = function(block) {
   var code = `
 function draw() {
 ${statements}
-}
-  `;
+}`;
   return code;
 };

@@ -1,10 +1,10 @@
 import p5 from 'p5';
 import Blockly from 'blockly';
 import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/github.css';
+import processing from 'highlight.js/lib/languages/processing';
+import 'highlight.js/styles/darcula.css';
 
-hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('processing', processing);
 
 document.addEventListener("DOMContentLoaded", function() {
   const saveButton = document.getElementById('saveButton');
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function myUpdateFunction(event) {
     var code = Blockly.JavaScript.workspaceToCode(workspace);
     console.log(code);
-    const highlightedCode = hljs.highlight('javascript', `${code}`).value
+    const highlightedCode = hljs.highlight('processing', `${code}`).value
     document.querySelector('pre code').innerHTML = highlightedCode;
   }
   workspace.addChangeListener(myUpdateFunction);

@@ -177,6 +177,20 @@ canvas {
   stroke: none;
 }
 
+.code-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+code.hljs {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+
 /* Block style */
 .blocklyPathLight {
   stroke-width: 0;
