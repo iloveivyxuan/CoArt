@@ -29,6 +29,6 @@ Blockly.JavaScript['distance'] = function(block) {
   var from_y = Blockly.JavaScript.valueToCode(block, 'from_y', Blockly.JavaScript.ORDER_ATOMIC);
   var to_x = Blockly.JavaScript.valueToCode(block, 'to_x', Blockly.JavaScript.ORDER_ATOMIC);
   var to_y = Blockly.JavaScript.valueToCode(block, 'to_y', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `dist(${from_x}, ${from_y}, ${to_x}, ${to_y});\n`;
+  var code = `dist(${from_x}, ${from_y}, ${to_x}, ${to_y})`;
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };

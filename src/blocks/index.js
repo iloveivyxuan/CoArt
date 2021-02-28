@@ -23,6 +23,7 @@ require("./transform/translate");
 require("./custom/polygon");
 require("./system-variables/mouse");
 require("./system-variables/canvas");
+require("./constants/two_pi");
 import { draw_blob } from "./draw_blob_function";
 import { drawRectangle } from "./draw_rectangle";
 import { rotateByDegree } from "./rotate_by_degree";
