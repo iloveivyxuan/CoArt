@@ -81,6 +81,55 @@
           </block>
         </statement>
       </block>
+      <block type="rectangle">
+        <value name="width">
+          <block type="number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="height">
+          <block type="number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="x-coordinate">
+          <block type="number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <value name="y-coordinate">
+          <block type="number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <statement name="styles">
+          <block type="fill">
+            <value name="color">
+              <block type="color">
+                <field name="color">#ffccff</field>
+              </block>
+            </value>
+            <next>
+              <block type="stroke">
+                <value name="color">
+                  <block type="color">
+                    <field name="color">#993399</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="stroke_weight">
+                    <value name="weight">
+                      <block type="number">
+                        <field name="num">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
     </category>
     <category name="Style" colour="#777CFB">
       <block type="background">

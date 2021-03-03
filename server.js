@@ -10,36 +10,36 @@ app.get('/', (req, res) => {
 })
 
 app.get('/tutorial', (req, res) => {
-	res.sendFile(path.join(__dirname, '/build/tutorial.html'))
+  res.sendFile(path.join(__dirname, '/build/tutorial.html'))
 })
 
 app.get('/sandbox', (req, res) => {
-	res.sendFile(path.join(__dirname, '/build/sandbox.html'))
+  res.sendFile(path.join(__dirname, '/build/sandbox.html'))
 })
 
 app.get('/art', (req, res) => {
-	res.sendFile(path.join(__dirname, '/build/artwork.html'))
+  res.sendFile(path.join(__dirname, '/build/artwork.html'))
 })
 
 // APIs: Resources artworks
 app.get('/artworks', (req, res) => {
-	return res.send(Object.values(artworks));
+  return res.send(Object.values(artworks));
 });
 
 app.get('/artworks/:artworkId', (req, res) => {
-	return res.send(artworks[req.params.artworkId])
+  return res.send(artworks[req.params.artworkId])
 });
 
 app.post('/artworks', (req, res) => {
-	return res.send('POST HTTP method on artwork Resources');
+  return res.send('POST HTTP method on artwork Resources');
 });
 
 app.put('/artworks/:artworkId', (req, res) => {
-	return res.send(`PUT HTTP method on artwork/${req.params.artworkId} resource`);
+  return res.send(`PUT HTTP method on artwork/${req.params.artworkId} resource`);
 });
 
 app.delete('/artwork/:artworkId', (req, res) => {
-	return res.send(`DELETE HTTP method on artwork/${req.params.artworkId} resource`);
+  return res.send(`DELETE HTTP method on artwork/${req.params.artworkId} resource`);
 });
 
 // express listen at port 8080
@@ -68,10 +68,10 @@ app.listen(PORT, () => {
 
 // Database Sample
 const artworks = {
-	1: {
-		id: '1',
-		blockXML: `
-		<xml xmlns="https://developers.google.com/blockly/xml">
+  1: {
+    id: '1',
+    blockXML: `
+    <xml xmlns="https://developers.google.com/blockly/xml">
       <variables>
         <variable id="wRohD_B.:U)95xx?_s=">circleResolution</variable>
         <variable id="}i/:8Z^{ir4N@-j/hWF">radius</variable>
@@ -208,6 +208,6 @@ const artworks = {
         </statement>
       </block>
     </xml>
-		`
-	}
+    `
+  }
 };
