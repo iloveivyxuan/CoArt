@@ -21,6 +21,7 @@ require("./basic/push");
 require("./basic/pop");
 require("./transform/translate");
 require("./custom/polygon");
+require("./custom/rounded_polygon");
 require("./system-variables/mouse");
 require("./system-variables/canvas");
 require("./constants/two_pi");

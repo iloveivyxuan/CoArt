@@ -37,7 +37,7 @@ Blockly.JavaScript['map'] = function(block) {
   var to_low = Blockly.JavaScript.valueToCode(block, 'to_low', Blockly.JavaScript.ORDER_ATOMIC);
   var to_high = Blockly.JavaScript.valueToCode(block, 'to_high', Blockly.JavaScript.ORDER_ATOMIC);
   var code = `
-    map(${value}, ${from_low}, ${from_high}, ${to_low}, ${to_high})
-  `;
+  map(${value}, ${from_low}, ${from_high}, ${to_low}, ${to_high})
+`;
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };

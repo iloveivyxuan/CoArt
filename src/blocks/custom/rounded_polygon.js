@@ -2,8 +2,8 @@ import Blockly from 'blockly';
 
 Blockly.defineBlocksWithJsonArray([
   {
-    "type": "polygon",
-    "message0": "polygon %1 sides %2 radius %3",
+    "type": "rounded_polygon",
+    "message0": "rounded polygon %1 sides %2 radius %3",
     "args0": [
       {
         "type": "input_dummy"
@@ -29,15 +29,15 @@ Blockly.defineBlocksWithJsonArray([
   }
 ]);
 
-Blockly.JavaScript['polygon'] = function(block) {
+Blockly.JavaScript['rounded_polygon'] = function(block) {
   var sides = Blockly.JavaScript.valueToCode(block, 'sides', Blockly.JavaScript.ORDER_ATOMIC);
   var radius = Blockly.JavaScript.valueToCode(block, 'radius', Blockly.JavaScript.ORDER_ATOMIC);
   var code = `beginShape();
 var angle = TWO_PI / ${sides};
-for (var i = 0; i <= ${sides}; i++) {
+for (var i = 0; i <= ${sides} + 2; i++) {
   var x = cos(angle * i) * ${radius};
   var y = sin(angle * i) * ${radius};
-  vertex(x, y);
+  curveVertex(x, y);
 }
 endShape();
 `;
