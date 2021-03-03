@@ -1,11 +1,6 @@
 # CreativeArt
 Computer Science Education tool based on generative art and block based programming
 
-Notes:
-- It's usually difficult for a bignner learn programming and processing APIs at the same time. So I have to teach one thing at a time. I should not provide too much new stuff at each time.
-- I can put a challenge at the end of each chapter to make sure users understand this chapter.
-- I need to convey that programing/coding is to solve problem or realize an idea.
-
 # Tutorial (Draft Version)
 ### Chapter One - Hello World
 - Challenge 1: draw a circle at center of the Canvas
@@ -28,5 +23,12 @@ Notes:
 ###TODO List
 [] Image save in amazon S3
 [] Backend: user logIn/SignIn, Upload project
-[] Javascript part
+[] Javascript/Python <=> Bockly
+[] Database
+[] Deploy
 
+###Database
+Artwork = {
+	id: int
+	blockXML: string
+}
