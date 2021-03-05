@@ -13,7 +13,9 @@ Blockly.Blocks['axis'] = {
 };
 
 Blockly.JavaScript['axis'] = function(block) {
-  var code = `push();
+  var code = `
+// Show Coordinate
+push();
 const step = 25;
 const length = max(width, height);
 const minL = -length;

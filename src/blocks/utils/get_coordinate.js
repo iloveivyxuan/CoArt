@@ -13,7 +13,10 @@ Blockly.Blocks['get_coordinate'] = {
 };
 
 Blockly.JavaScript['get_coordinate'] = function(block) {
-  var code = `stroke('#ddd');
+  var code = `
+// Get Mouse coordinate
+push();
+stroke('#ddd');
 line(mouseX, 0, mouseX, mouseY);
 line(0, mouseY, mouseX, mouseY);
 var x = min(mouseX+10, 270);
@@ -23,6 +26,7 @@ y = max(0, y);
 rect(x, y, 80, 20, 6);
 textAlign(CENTER, CENTER);
 text(\`x: \${int(mouseX)}, y: \${int(mouseY)}\`, x+40, y+10);
+pop();
 `;
   return code;
 };

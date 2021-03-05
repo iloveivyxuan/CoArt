@@ -18,6 +18,8 @@ Blockly.Blocks['simpleEllipse'] = {
         .appendField("height")
         .appendField(new Blockly.FieldTextInput("100"), "height");
     this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour('#8c66f7');
   this.setTooltip("");
   this.setHelpUrl("");
@@ -40,12 +42,11 @@ Blockly.JavaScript['simpleEllipse'] = function(block) {
   	x_coordinate = str(350 - float(width/2));
   	y_coordinate = str(350 - float(height/2));
   }
-  const code = `
-    fill('#fff');
-    stroke('#000');
-    strokeWeight(1);
-    ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
-  `;
+  const code = `fill('#fff');
+stroke('#000');
+strokeWeight(1);
+ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
+`;
   return code;
 };
 
