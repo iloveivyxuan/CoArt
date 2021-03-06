@@ -2,6 +2,7 @@ import p5 from 'p5';
 import Blockly from 'blockly';
 import '@blockly/block-plus-minus';
 import '@blockly/field-slider';
+import { WorkspaceSearch } from '@blockly/plugin-workspace-search';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
 import 'highlight.js/styles/darcula.css';
@@ -30,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
       trashcan: true
     });
 
-  window.workspace = workspace;
+  const workspaceSearch = new WorkspaceSearch(workspace);
+  workspaceSearch.init();
 
   const lang = 'JavaScript';
   const button = document.getElementById('blocklyButton');
