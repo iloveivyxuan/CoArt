@@ -19,17 +19,20 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       toolbox: document.getElementById('toolbox'),
       media: 'media/',
-      zoom:
-      	{
-      		controls: true,
-      		startScale: 1.0,
-      		maxScale: 3,
-      		minScale: 0.3,
-      		scaleSpeed: 1.2,
-      		pinch: true
-      	},
+      renderer: 'thrasos',
+      theme: Blockly.Themes.Tritanopia,
+      zoom: {
+    		controls: true,
+    		startScale: 1.0,
+    		maxScale: 3,
+    		minScale: 0.3,
+    		scaleSpeed: 1.2,
+    		pinch: true
+    	},
       trashcan: true
     });
+
+  window.workspace = workspace;
 
   const workspaceSearch = new WorkspaceSearch(workspace);
   workspaceSearch.init();
