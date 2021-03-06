@@ -5,43 +5,73 @@ import './css/tutorial.css';
 import './css/global.css';
 import './css/modal.css';
 import { modal, toggleModal, modalContinueButton } from './js/modal.js';
+import './js/canvas';
 
 document.addEventListener("DOMContentLoaded", function() {
-  const saveButton = document.getElementById('saveButton');
-  saveButton.addEventListener('click', function() {
-    saveCanvas('myCanvas');
-  });
+  // const saveButton = document.getElementById('saveButton');
+  // saveButton.addEventListener('click', function() {
+  //   saveCanvas('myCanvas');
+  // });
 
-  const workspace = Blockly.inject('blocklyDiv',
-    {
-      toolbox: document.getElementById('toolbox'),
-      media: 'media/',
-      zoom:
-      	{
-      		controls: true,
-      		startScale: 1.0,
-      		maxScale: 3,
-      		minScale: 0.3,
-      		scaleSpeed: 1.2,
-      		pinch: true
-      	},
-      trashcan: true
-    });
+  // const workspace = Blockly.inject('blocklyDiv',
+  //   {
+  //     toolbox: document.getElementById('toolbox'),
+  //     media: 'media/',
+  //     zoom:
+  //     	{
+  //     		controls: true,
+  //     		startScale: 1.0,
+  //     		maxScale: 3,
+  //     		minScale: 0.3,
+  //     		scaleSpeed: 1.2,
+  //     		pinch: true
+  //     	},
+  //     trashcan: true
+  //   });
 
   const lang = 'JavaScript';
   const button = document.getElementById('blocklyButton');
 
   button.addEventListener('click', () => {
     const code = Blockly[lang].workspaceToCode(workspace);
-    const geval = eval;
-    try {
-    	background("#fff");
-      geval(code);
+    var isPlay = document.getElementById('blocklyButton').classList.contains('stop');
+    if (isPlay) {
       checkCode(code);
-    } catch (e) {
-      alert(e);
     }
+    // const geval = eval;
+    // try {
+    // 	background("#fff");
+    //   geval(code);
+      // checkCode(code);
+    // } catch (e) {
+    //   alert(e);
+    // }
   });
+
+  // Add default blocks
+  const blocks = `
+    <xml xmlns="https://developers.google.com/blockly/xml">
+      <block type="setup" id="qIq?1KNe%8;P~qytfWxt" x="104" y="83">
+        <statement name="setup">
+          <block type="create_canvas" id="=kP3owXA?-]!~4(220T[">
+            <field name="width">350</field>
+            <field name="height">350</field>
+            <next>
+              <block type="background" id="8]qPru8KfW!W/QD@jP)_">
+                <value name="color">
+                  <block type="color" id="(gK~IXv*|}^(IBC_$A$">
+                    <field name="color">#ffffff</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </xml>
+  `;
+  const xml = Blockly.Xml.textToDom(blocks);
+  Blockly.Xml.domToWorkspace(xml, window.workspace);
 
   // Check Code
   const checkCode = (code) => {
@@ -60,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     toolbox = challengeBlocks[currentChallenge];
     workspace.updateToolbox(toolbox);
     workspace.clear();
-    background("#fff");
+    Blockly.Xml.domToWorkspace(xml, window.workspace);
   });
 
   // Progress Bar
