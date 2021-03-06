@@ -8,7 +8,7 @@ Blockly.Blocks['get_integer'] = {
         .setCheck("Number");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour('#E4CCF6');
+    this.setColour('#E4DA5A');
  this.setTooltip("");
  this.setHelpUrl("");
   }

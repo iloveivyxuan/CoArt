@@ -18,7 +18,7 @@ Blockly.Blocks['distance'] = {
         .appendField("y");
     this.setInputsInline(false);
     this.setOutput(true, null);
-    this.setColour('#E4CCF6');
+    this.setColour('#E4DA5A');
  this.setTooltip("Calculates the distance between two points, in either two or three dimensions");
  this.setHelpUrl("https://p5js.org/reference/#/p5/dist");
   }

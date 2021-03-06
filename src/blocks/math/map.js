@@ -31,7 +31,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": false,
     "output": null,
-    "colour": "#E4CCF6",
+    "colour": "#E4DA5A",
     "tooltip": "Re-maps a number from one range to another",
     "helpUrl": "https://p5js.org/reference/#/p5/map"
   }

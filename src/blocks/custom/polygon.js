@@ -25,7 +25,7 @@ Blockly.defineBlocksWithJsonArray([
     "nextStatement": null,
     "colour": '#EE8DB0',
     "tooltip": "",
-    "helpUrl": ""
+    "helpUrl": "/block.html"
   }
 ]);
 
