@@ -2,7 +2,7 @@ require("./random_function");
 require("./move_to_center");
 require("./shape/ellipse");
 require("./shape/rectangle");
-require("./math/number");
+require("./shape/vertex");
 require("./math/get_integer");
 require("./math/map");
 require("./math/distance");

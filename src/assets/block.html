@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creative Art - Sandbox</title>
+</head>
+<body>
+	<div class="container">
+    <div class="main-wrapper">
+      <div id='blocklyDiv' class="blockly-wrapper"></div>
+
+      <div class="visualization">
+        <main id="main"></main>
+        <div class="buttons">
+          <button class="btn play" id="blocklyButton"></button>
+          <button class="btn save" id="saveButton"></button>
+          <!-- <button class="btn" id="step">step</button> -->
+        </div>
+        <pre class="code-wrapper"><code class="hljs processing"></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <category name="Basic" colour="#EA4F1E">
+      <block type="setup" id="setup"></block>
+      <block type="draw"></block>
+      <block type="create_canvas"></block>
+      <block type="push"></block>
+      <block type="pop"></block>
+    </category>
+    <category name="Transform" colour="#17AD80">
+      <block type="translate"></block>
+    </category>
+    <category name="Shape" colour="#5935BC">
+      <block type="begin_shape"></block>
+      <block type="customized_ellipse">
+        <value name="width">
+          <block type="math_number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="height">
+          <block type="math_number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="x-coordinate">
+          <block type="math_number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <value name="y-coordinate">
+          <block type="math_number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <statement name="styles">
+          <block type="fill">
+            <value name="color">
+              <block type="color">
+                <field name="color">#ffccff</field>
+              </block>
+            </value>
+            <next>
+              <block type="stroke">
+                <value name="color">
+                  <block type="color">
+                    <field name="color">#993399</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="stroke_weight">
+                    <value name="weight">
+                      <block type="math_number">
+                        <field name="num">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+      <block type="rectangle">
+        <value name="width">
+          <block type="math_number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="height">
+          <block type="math_number">
+            <field name="num">100</field>
+          </block>
+        </value>
+        <value name="x-coordinate">
+          <block type="math_number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <value name="y-coordinate">
+          <block type="math_number">
+            <field name="num">200</field>
+          </block>
+        </value>
+        <statement name="styles">
+          <block type="fill">
+            <value name="color">
+              <block type="color">
+                <field name="color">#ffccff</field>
+              </block>
+            </value>
+            <next>
+              <block type="stroke">
+                <value name="color">
+                  <block type="color">
+                    <field name="color">#993399</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="stroke_weight">
+                    <value name="weight">
+                      <block type="math_number">
+                        <field name="num">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </category>
+    <category name="Style" colour="#777CFB">
+      <block type="background">
+        <value name="color">
+          <block type="color">
+            <field name="color">#ffffff</field>
+          </block>
+        </value>
+      </block>
+      <block type="no_fill"></block>
+      <block type="fill">
+        <value name="color">
+          <block type="color">
+            <field name="color">#ffccff</field>
+          </block>
+        </value>
+      </block>
+      <block type="stroke">
+        <value name="color">
+          <block type="color">
+            <field name="color">#993399</field>
+          </block>
+        </value>
+      </block>
+      <block type="stroke_weight">
+        <value name="weight">
+          <block type="math_number">
+            <field name="num">3</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category name="Math" colour="#E4DA5A">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+      <block type="math_arithmetic">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_single">
+        <field name="OP">ROOT</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_trig">
+        <field name="OP">SIN</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">45</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constant">
+        <field name="CONSTANT">PI</field>
+      </block>
+      <block type="math_number_property">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">EVEN</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_round">
+        <field name="OP">ROUND</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">3.1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_on_list">
+        <mutation op="SUM"></mutation>
+        <field name="OP">SUM</field>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <shadow type="math_number">
+            <field name="NUM">64</field>
+          </shadow>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="LOW">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="HIGH">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+      <block type="get_integer">
+        <field name="options">round</field>
+        <field name="num">0</field>
+      </block>
+      <block type="map">
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_low">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_high">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_low">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_high">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="distance">
+        <value name="from_x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category name="Constants" colour="#A46DEA">
+      <block type="two_pi"></block>
+    </category>
+    <category name="Variables" colour="#a55b80" custom="VARIABLE">
+    </category>
+    <category name="System Variables" colour="#a55b80">
+      <block type="width"></block>
+      <block type="height"></block>
+      <block type="mouse_x"></block>
+      <block type="mouse_y"></block>
+      <block type="mouse_is_pressed"></block>
+      <block type="mouse_button"></block>
+    </category>
+    </category>
+    <category name="Color" colour="#FFC5C5">
+      <block type="color"></block>
+      <block type="rgba">
+        <field name="r">100</field>
+        <field name="g">100</field>
+        <field name="b">100</field>
+        <field name="a">1</field>
+      </block>
+    </category>
+    <category name="Utils" colour="#F5AE24">
+      <block type="get_coordinate"></block>
+      <block type="axis"></block>
+    </category>
+    <sep></sep>
+    <category name="Functions" colour="#511022" custom="PROCEDURE"></category>
+    <category name="Logic" colour="#AAD1EE">
+      <block type="controls_if"></block>
+      <block type="controls_if">
+          <mutation else="1"></mutation>
+      </block>
+      <block type="logic_compare">
+        <field name="OP">EQ</field>
+      </block>
+      <block type="logic_operation">
+        <field name="OP">AND</field>
+      </block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
+    </category>
+    <category name="Loops" colour="#9C2947">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_whileUntil">
+        <field name="MODE">WHILE</field>
+      </block>
+      <block type="controls_for">
+        <field name="VAR" id="g3[^wJ5m%EvFJQ1QiUgi">i</field>
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_forEach">
+        <field name="VAR" id="qovH(CJP6.O4[)TW}nsH">j</field>
+      </block>
+      <block type="controls_flow_statements">
+        <field name="FLOW">BREAK</field>
+      </block>
+    </category>
+  </xml>
+</body>
+</html>
