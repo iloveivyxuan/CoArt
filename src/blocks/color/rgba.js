@@ -6,28 +6,28 @@ Blockly.defineBlocksWithJsonArray([
     "message0": "rgba ( %1 , %2 , %3 , %4 )",
     "args0": [
       {
-        "type": "field_number",
+        "type": "field_slider",
         "name": "r",
         "value": 0,
         "min": 0,
         "max": 255
       },
       {
-        "type": "field_number",
+        "type": "field_slider",
         "name": "g",
         "value": 0,
         "min": 0,
         "max": 255
       },
       {
-        "type": "field_number",
+        "type": "field_slider",
         "name": "b",
         "value": 0,
         "min": 0,
         "max": 255
       },
       {
-        "type": "field_number",
+        "type": "field_slider",
         "name": "a",
         "value": 1,
         "min": 0,
