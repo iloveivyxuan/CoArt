@@ -8,8 +8,8 @@ Blockly.Blocks['fill'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#777CFB');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("Sets the color used to fill shapes");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/fill");
   }
 };
 

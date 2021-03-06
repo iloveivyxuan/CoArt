@@ -8,8 +8,8 @@ Blockly.Blocks['background'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#777CFB');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("The background() function sets the color used for the background of the p5.js canva");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/background");
   }
 };
 

@@ -11,8 +11,8 @@ Blockly.Blocks['translate'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#17AD80');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("Specifies an amount to displace objects within the display window");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/translate");
   }
 };
 

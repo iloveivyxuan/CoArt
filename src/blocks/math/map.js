@@ -25,8 +25,8 @@ Blockly.Blocks['map'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour('#E4CCF6');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("Re-maps a number from one range to another");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/map");
   }
 };
 

@@ -6,8 +6,8 @@ Blockly.defineBlocksWithJsonArray([
     "message0": "two_pi",
     "output": null,
     "colour": '#A46DEA',
-    "tooltip": "",
-    "helpUrl": ""
+    "tooltip": "TWO_PI is a mathematical constant with the value 6.28318530717958647693",
+    "helpUrl": "https://p5js.org/reference/#/p5/TWO_PI"
   }
 ]);
 

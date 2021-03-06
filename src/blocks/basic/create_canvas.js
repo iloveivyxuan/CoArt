@@ -11,8 +11,8 @@ Blockly.Blocks['create_canvas'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#EA4F1E');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("Creates a canvas element in the document, and sets the dimensions of it in pixels");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/createCanvas");
   }
 };
 

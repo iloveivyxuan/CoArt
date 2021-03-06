@@ -8,21 +8,21 @@ Blockly.defineBlocksWithJsonArray([
       {
         "type": "field_slider",
         "name": "r",
-        "value": 0,
+        "value": 100,
         "min": 0,
         "max": 255
       },
       {
         "type": "field_slider",
         "name": "g",
-        "value": 0,
+        "value": 100,
         "min": 0,
         "max": 255
       },
       {
         "type": "field_slider",
         "name": "b",
-        "value": 0,
+        "value": 100,
         "min": 0,
         "max": 255
       },

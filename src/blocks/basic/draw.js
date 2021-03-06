@@ -7,8 +7,8 @@ Blockly.Blocks['draw'] = {
     this.appendStatementInput("draw")
         .setCheck(null);
     this.setColour('#EA4F1E');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("Called directly after setup(), the draw() function continuously executes the lines of code contained inside its block until the program is stopped or noLoop() is called");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/draw");
   }
 };
 

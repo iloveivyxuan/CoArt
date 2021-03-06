@@ -7,8 +7,8 @@ Blockly.Blocks['setup'] = {
     this.appendStatementInput("setup")
         .setCheck(null);
     this.setColour('#EA4F1E');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("The setup() function is called once when the program starts");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/setup");
   }
 };
 
