@@ -1,5 +1,6 @@
 import p5 from 'p5';
 import Blockly from 'blockly';
+import '@blockly/block-plus-minus';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
 import 'highlight.js/styles/darcula.css';
@@ -56,12 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  function myUpdateFunction(event) {
+  function udpateCodeGenerator(event) {
     var code = Blockly.JavaScript.workspaceToCode(workspace);
     const highlightedCode = hljs.highlight('processing', `${code}`).value
     document.querySelector('pre code').innerHTML = highlightedCode;
   }
-  workspace.addChangeListener(myUpdateFunction);
+  workspace.addChangeListener(udpateCodeGenerator);
 });
 
 export { Blockly };

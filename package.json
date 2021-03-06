@@ -12,7 +12,8 @@
     "prestart": "npm run bundle"
   },
   "dependencies": {
-    "blockly": "^3.20200924.3",
+    "@blockly/block-plus-minus": "^2.0.20",
+    "blockly": "^4.20201217.0",
     "highlight.js": "^10.6.0",
     "mongodb": "^3.6.4",
     "p5": "^1.2.0"

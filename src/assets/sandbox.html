@@ -13,7 +13,7 @@
         <div class="buttons">
           <button class="btn play" id="blocklyButton"></button>
           <button class="btn save" id="saveButton"></button>
-          <!-- <button class="button" id="saveButton">publish</button> -->
+          <!-- <button class="btn" id="step">step</button> -->
         </div>
         <pre class="code-wrapper"><code class="hljs processing"></code></pre>
       </div>
@@ -270,8 +270,12 @@
       </block>
     </category>
     <sep></sep>
+    <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
     <category name="Logic" colour="#5b80a5">
       <block type="controls_if"></block>
+      <block type="controls_if">
+          <mutation else="1"></mutation>
+      </block>
       <block type="logic_compare">
         <field name="OP">EQ</field>
       </block>
