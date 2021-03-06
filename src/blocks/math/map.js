@@ -1,34 +1,41 @@
 import Blockly from 'blockly';
 
-Blockly.Blocks['map'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("map");
-    this.appendValueInput("value")
-        .setCheck("Number");
-    this.appendDummyInput()
-        .appendField("from low");
-    this.appendValueInput("from_low")
-        .setCheck("Number");
-    this.appendDummyInput()
-        .appendField("high");
-    this.appendValueInput("from_high")
-        .setCheck("Number");
-    this.appendDummyInput()
-        .appendField("to low");
-    this.appendValueInput("to_low")
-        .setCheck("Number");
-    this.appendDummyInput()
-        .appendField("high");
-    this.appendValueInput("to_high")
-        .setCheck("Number");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour('#E4CCF6');
- this.setTooltip("Re-maps a number from one range to another");
- this.setHelpUrl("https://p5js.org/reference/#/p5/map");
+Blockly.defineBlocksWithJsonArray([
+  {
+    "type": "map",
+    "message0": "map %1 from low %2 high %3 to low %4 high %5",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "from_low",
+        "check": "Number"
+      },
+      {
+        "type": "input_value",
+        "name": "from_high",
+        "check": "Number"
+      },
+      {
+        "type": "input_value",
+        "name": "to_low",
+        "check": "Number"
+      },
+      {
+        "type": "input_value",
+        "name": "to_high",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": false,
+    "output": null,
+    "colour": "#E4CCF6",
+    "tooltip": "Re-maps a number from one range to another",
+    "helpUrl": "https://p5js.org/reference/#/p5/map"
   }
-};
+]);
 
 Blockly.JavaScript['map'] = function(block) {
   var value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);

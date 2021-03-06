@@ -16,7 +16,7 @@ Blockly.Blocks['distance'] = {
     this.appendValueInput("to_y")
         .setCheck("Number")
         .appendField("y");
-    this.setInputsInline(true);
+    this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour('#E4CCF6');
  this.setTooltip("Calculates the distance between two points, in either two or three dimensions");
