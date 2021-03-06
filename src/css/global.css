@@ -227,3 +227,7 @@ code.hljs {
 .blocklyTreeLabel {
   line-height: 26px;
 }
+
+.blocklyTreeIcon {
+  margin-top: 5px;
+}

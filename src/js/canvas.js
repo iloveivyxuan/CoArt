@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
       theme: Blockly.Themes.Tritanopia,
       zoom: {
     		controls: true,
-    		startScale: 1.0,
+    		startScale: 1,
     		maxScale: 3,
     		minScale: 0.3,
     		scaleSpeed: 1.2,
