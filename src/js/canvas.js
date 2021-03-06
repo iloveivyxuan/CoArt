@@ -1,6 +1,7 @@
 import p5 from 'p5';
 import Blockly from 'blockly';
 import '@blockly/block-plus-minus';
+import '@blockly/field-slider';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
 import 'highlight.js/styles/darcula.css';
