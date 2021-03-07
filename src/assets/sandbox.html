@@ -32,24 +32,38 @@
       <block type="translate"></block>
     </category>
     <category name="Shape" colour="#5935BC">
+      <block type="begin_shape"></block>
+      <block type="end_shape"></block>
+      <block type="vertex">
+        <value name="x">
+          <shadow type="math_number">
+            <field name="num">100</field>
+          </shadow>
+        </value>
+        <value name="y">
+          <shadow type="math_number">
+            <field name="num">100</field>
+          </shadow>
+        </value>
+      </block>
       <block type="customized_ellipse">
         <value name="width">
-          <block type="number">
+          <block type="math_number">
             <field name="num">100</field>
           </block>
         </value>
         <value name="height">
-          <block type="number">
+          <block type="math_number">
             <field name="num">100</field>
           </block>
         </value>
         <value name="x-coordinate">
-          <block type="number">
+          <block type="math_number">
             <field name="num">200</field>
           </block>
         </value>
         <value name="y-coordinate">
-          <block type="number">
+          <block type="math_number">
             <field name="num">200</field>
           </block>
         </value>
@@ -70,7 +84,7 @@
                 <next>
                   <block type="stroke_weight">
                     <value name="weight">
-                      <block type="number">
+                      <block type="math_number">
                         <field name="num">3</field>
                       </block>
                     </value>
@@ -83,22 +97,22 @@
       </block>
       <block type="rectangle">
         <value name="width">
-          <block type="number">
+          <block type="math_number">
             <field name="num">100</field>
           </block>
         </value>
         <value name="height">
-          <block type="number">
+          <block type="math_number">
             <field name="num">100</field>
           </block>
         </value>
         <value name="x-coordinate">
-          <block type="number">
+          <block type="math_number">
             <field name="num">200</field>
           </block>
         </value>
         <value name="y-coordinate">
-          <block type="number">
+          <block type="math_number">
             <field name="num">200</field>
           </block>
         </value>
@@ -119,7 +133,7 @@
                 <next>
                   <block type="stroke_weight">
                     <value name="weight">
-                      <block type="number">
+                      <block type="math_number">
                         <field name="num">3</field>
                       </block>
                     </value>
@@ -156,66 +170,15 @@
       </block>
       <block type="stroke_weight">
         <value name="weight">
-          <block type="number">
+          <block type="math_number">
             <field name="num">3</field>
           </block>
         </value>
       </block>
     </category>
     <category name="Math" colour="#E4DA5A">
-      <block type="number"></block>
-      <block type="get_integer">
-        <field name="options">round</field>
-        <field name="num">0</field>
-      </block>
-      <block type="map">
-        <value name="value">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="from_low">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="from_high">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="to_low">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="to_high">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-      </block>
-      <block type="distance">
-        <value name="from_x">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="from_y">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="to_x">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="to_y">
-          <block type="number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
+      <block type="math_number">
+        <field name="NUM">0</field>
       </block>
       <block type="math_arithmetic">
         <field name="OP">ADD</field>
@@ -228,6 +191,141 @@
           <shadow type="math_number">
             <field name="NUM">1</field>
           </shadow>
+        </value>
+      </block>
+      <block type="math_single">
+        <field name="OP">ROOT</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_trig">
+        <field name="OP">SIN</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">45</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constant">
+        <field name="CONSTANT">PI</field>
+      </block>
+      <block type="math_number_property">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">EVEN</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_round">
+        <field name="OP">ROUND</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">3.1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_on_list">
+        <mutation op="SUM"></mutation>
+        <field name="OP">SUM</field>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <shadow type="math_number">
+            <field name="NUM">64</field>
+          </shadow>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="LOW">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="HIGH">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+      <block type="get_integer">
+        <field name="options">round</field>
+        <field name="num">0</field>
+      </block>
+      <block type="map">
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_low">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_high">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_low">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_high">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="distance">
+        <value name="from_x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="from_y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="to_y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
         </value>
       </block>
     </category>
@@ -320,12 +418,12 @@
         <block type="polygon"></block>
         <block type="rounded_polygon">
           <value name="sides">
-            <block type="number">
+            <block type="math_number">
               <field name="num">3</field>
             </block>
           </value>
           <value name="radius">
-            <block type="number">
+            <block type="math_number">
               <field name="num">50</field>
             </block>
           </value>

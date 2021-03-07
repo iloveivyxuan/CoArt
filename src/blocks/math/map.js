@@ -3,37 +3,46 @@ import Blockly from 'blockly';
 Blockly.defineBlocksWithJsonArray([
   {
     "type": "map",
-    "message0": "map %1 from low %2 high %3 to low %4 high %5",
+    "message0": "map %1 value %2 from low %3 high %4 to low %5 high %6",
     "args0": [
       {
         "type": "input_dummy"
       },
       {
         "type": "input_value",
+        "name": "value",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
         "name": "from_low",
-        "check": "Number"
+        "check": "Number",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
         "name": "from_high",
-        "check": "Number"
+        "check": "Number",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
         "name": "to_low",
-        "check": "Number"
+        "check": "Number",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
         "name": "to_high",
-        "check": "Number"
+        "check": "Number",
+        "align": "RIGHT"
       }
     ],
     "inputsInline": false,
     "output": null,
     "colour": "#E4DA5A",
-    "tooltip": "Re-maps a number from one range to another",
-    "helpUrl": "https://p5js.org/reference/#/p5/map"
+    "tooltip": "",
+    "helpUrl": ""
   }
 ]);
 
