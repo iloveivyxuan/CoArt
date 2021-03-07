@@ -2,12 +2,59 @@ import p5 from 'p5';
 import Blockly from 'blockly';
 import '@blockly/block-plus-minus';
 import '@blockly/field-slider';
+import { registerTooltipExtension } from './blockly-plugin';
 import { WorkspaceSearch } from '@blockly/plugin-workspace-search';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
 import 'highlight.js/styles/darcula.css';
 
 hljs.registerLanguage('processing', processing);
+
+registerTooltipExtension((block) => {
+  // Custom tooltip render function.
+  const tooltip = document.createElement('div');
+  tooltip.className = 'custom-tooltip';
+  tooltip.style.backgroundColor = block.getColour();
+  tooltip.style.borderColor = block.getColourTertiary();
+
+  const blockTooltipText = document.createElement('div');
+  blockTooltipText.textContent = block.getTooltip();
+  tooltip.appendChild(blockTooltipText);
+
+  return tooltip;
+}, 'tooltip-extension');
+
+// Customize the tooltip CSS.
+Blockly.Css.register([
+  `
+    div.blocklyTooltipDiv {
+      border: none !important;
+      box-shadow: none !important;
+      background-color: transparent !important;
+      opacity: 0.92 !important;
+    }
+    .custom-tooltip {
+      color: #fff;
+      border: 1px solid #000;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+    }
+  `,
+]);
+
+// Add the tooltip extension to all blocks.
+Object.keys(Blockly.Blocks).forEach((blockId) => {
+  const block = Blockly.Blocks[blockId];
+  if (block.init) {
+    const oldInit = block.init;
+    block.init = function() {
+      if (oldInit) oldInit.call(this);
+      this.jsonInit({
+        'extensions': ['tooltip-extension'],
+      });
+    };
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const saveButton = document.getElementById('saveButton');
