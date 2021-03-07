@@ -12,6 +12,7 @@ module.exports = {
     sandbox: './src/sandbox.js',
     browse: './src/browse.js',
     artwork: './src/artwork.js',
+    block: './src/block.js',
     home_page: './src/home_page.js',
     index: './src/index.js',
     blob_tutorial: './src/blob_tutorial.js',
@@ -48,6 +49,12 @@ module.exports = {
       template: './src/assets/sandbox.html',
       chunksSortMode: 'manual',
       chunks: ['artwork'],
+      favicon: './src/images/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'block.html',
+      template: './src/assets/block.html',
+      chunks: ['block'],
       favicon: './src/images/favicon.png'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
