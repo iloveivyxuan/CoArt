@@ -16,6 +16,7 @@
     "@blockly/field-slider": "^2.1.11",
     "@blockly/plugin-workspace-search": "^2.1.11",
     "blockly": "^4.20201217.0",
+    "firebase": "^8.2.10",
     "highlight.js": "^10.6.0",
     "mongodb": "^3.6.4",
     "p5": "^1.2.0"
