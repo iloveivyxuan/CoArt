@@ -94,15 +94,15 @@ document.addEventListener("DOMContentLoaded", function() {
       button.classList.add('play');
       remove();
     } else {
-      button.classList.remove('play');
-      button.classList.add('stop');
+      const geval = eval;
       var xml = Blockly.Xml.workspaceToDom(workspace);
       var xml_text = Blockly.Xml.domToPrettyText(xml);
       console.log(xml_text);
       const code = Blockly[lang].workspaceToCode(workspace);
-      const geval = eval;
       try {
         geval(code);
+        button.classList.remove('play');
+        button.classList.add('stop');
         new p5();
       } catch (e) {
         alert(e);

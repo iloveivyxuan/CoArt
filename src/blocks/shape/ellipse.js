@@ -21,8 +21,8 @@ Blockly.Blocks['simpleEllipse'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#8c66f7');
-  this.setTooltip("");
-  this.setHelpUrl("");
+  this.setTooltip("Draws an ellipse (oval) to the screen");
+  this.setHelpUrl("https://p5js.org/reference/#/p5/ellipse");
   }
 };
 
@@ -42,10 +42,7 @@ Blockly.JavaScript['simpleEllipse'] = function(block) {
   	x_coordinate = str(350 - float(width/2));
   	y_coordinate = str(350 - float(height/2));
   }
-  const code = `fill('#fff');
-stroke('#000');
-strokeWeight(1);
-ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
+  const code = `ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
 `;
   return code;
 };
@@ -67,15 +64,11 @@ Blockly.Blocks['basicEllipse'] = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("height")
         .appendField(new Blockly.FieldTextInput("100"), "height");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("fill color")
-        .appendField(new Blockly.FieldColour("#ffccff"), "fill");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("border color")
-        .appendField(new Blockly.FieldColour("#993399"), "stroke");
+    this.appendStatementInput("styles")
+        .setCheck(null);
     this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour('#6d46d9');
  this.setTooltip("");
  this.setHelpUrl("");
@@ -98,13 +91,12 @@ Blockly.JavaScript['basicEllipse'] = function(block) {
     x_coordinate = str(350 - float(width/2));
     y_coordinate = str(350 - float(height/2));
   }
-  const colour_stroke = block.getFieldValue('stroke');
-  const colour_fill = block.getFieldValue('fill');
-  const code = `
-    stroke('${colour_stroke}');
-    fill('${colour_fill}');
-    ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
-  `
+  var statements = Blockly.JavaScript.statementToCode(block, 'styles');
+  const code = `push();
+${statements}
+  ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
+pop();
+`;
   return code;
 };
 

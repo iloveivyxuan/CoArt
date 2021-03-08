@@ -36,16 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const code = Blockly[lang].workspaceToCode(workspace);
     var isPlay = document.getElementById('blocklyButton').classList.contains('stop');
     if (isPlay) {
-      checkCode(code);
+      try {
+        eval(code)
+        checkCode(code);
+      } catch (e) {
+
+      }
     }
-    // const geval = eval;
-    // try {
-    // 	background("#fff");
-    //   geval(code);
-      // checkCode(code);
-    // } catch (e) {
-    //   alert(e);
-    // }
   });
 
   // Add default blocks
@@ -75,7 +72,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Check Code
   const checkCode = (code) => {
-    const isSuccess =  code.includes(successCode[currentChallenge]);
+    const isSuccess = true;
+    const sucCodes = successCode[currentChallenge];
+    console.log()
+    if (code.includes(failedCode[currentChallenge])) {
+      isSuccess = false;
+    }
+    for (const sucCode of sucCodes) {
+      if (!code.includes(sucCode)) {
+        isSuccess = false;
+      }
+    }
     if (isSuccess) {
       toggleModal();
     }
@@ -91,11 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
     workspace.updateToolbox(toolbox);
     workspace.clear();
     Blockly.Xml.domToWorkspace(xml, window.workspace);
+    console.log(currentChallenge);
   });
 
   // Progress Bar
-  const challengeNum = 7;
-  let currentChallenge = 0;
+  const challengeNum = 6;
+  let currentChallenge = 5;
 
   const generateProgressBar = (num) => {
     let list = ``;
@@ -138,15 +146,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Success Conditions
   const successCode = [
-    `ellipse`,
-    `ellipse`,
-    `ellipse`,
-    `ellipse`
+    [`ellipse`],
+    [`ellipse`, `fill`],
+    [`ellipse`, `fill`, `stroke`, `strokeWeight`],
+    [`// Show Coordinate`, `ellipse`],
+    [`rect`],
+    null
+  ];
+
+  const failedCode = [
+    null,
+    null,
+    null,
+    `ellipse(200, 200, 100, 100)`,
+    null,
   ];
 
   // Challenge Descriptions
   const challengeDes = [
-    'Drag block into the workspace.\nChange width and height to create an ellipse.'
+    `How block works? It's easy. Just drag and drop. Then you are done.
+    Drag the 'Draw an ellipse' block into the workspace, and connect it inside the 'setup' block.
+    Change width and height to create an ellipse.`,
+    `Let's fill the circle with your favorite color. Drag`,
+    `Canvas and coordinates
+    `
   ];
 
   // Challenge Blocks XML
@@ -166,21 +189,44 @@ document.addEventListener("DOMContentLoaded", function() {
          <field name="position">center</field>
          <field name="width">100</field>
          <field name="height">100</field>
-         <field name="stroke">#993399</field>
-         <field name="fill">#ffccff</field>
+      </block>
+      <block type="fill">
+        <value name="color">
+          <shadow type="color">
+            <field name="color">#ffccff</field>
+          </shadow>
+        </value>
       </block>
     </xml>
   `;
 
   const challenge3 = `
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <block type="ellipse">
-        <field name="x-coordinate">100</field>
-        <field name="y-coordinate">100</field>
-        <field name="width">100</field>
-        <field name="height">100</field>
-        <field name="stroke">#993399</field>
-        <field name="fill">#ffccff</field>
+      <block type="basicEllipse">
+         <field name="position">center</field>
+         <field name="width">100</field>
+         <field name="height">100</field>
+      </block>
+      <block type="fill">
+        <value name="color">
+          <shadow type="color">
+            <field name="color">#ffccff</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="stroke">
+        <value name="color">
+          <shadow type="color">
+            <field name="color">#993399</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="stroke_weight">
+        <value name="weight">
+          <shadow type="math_number">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
       </block>
     </xml>
   `;
@@ -189,37 +235,37 @@ document.addEventListener("DOMContentLoaded", function() {
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
       <block type="customized_ellipse">
         <value name="width">
-          <block type="math_number">
+          <shadow type="math_number">
             <field name="NUM">100</field>
-          </block>
+          </shadow>
         </value>
         <value name="height">
-          <block type="math_number">
+          <shadow type="math_number">
             <field name="NUM">100</field>
-          </block>
+          </shadow>
         </value>
         <value name="x-coordinate">
-          <block type="math_number">
+          <shadow type="math_number">
             <field name="NUM">200</field>
-          </block>
+          </shadow>
         </value>
         <value name="y-coordinate">
-          <block type="math_number">
+          <shadow type="math_number">
             <field name="NUM">200</field>
-          </block>
+          </shadow>
         </value>
         <statement name="styles">
           <block type="fill">
             <value name="color">
-              <block type="colour_picker">
-                <field name="COLOUR">#ffccff</field>
+              <block type="color">
+                <field name="color">#ffccff</field>
               </block>
             </value>
             <next>
               <block type="stroke">
                 <value name="color">
-                  <block type="colour_picker">
-                    <field name="COLOUR">#993399</field>
+                  <block type="color">
+                    <field name="color">#993399</field>
                   </block>
                 </value>
                 <next>
@@ -236,12 +282,193 @@ document.addEventListener("DOMContentLoaded", function() {
           </block>
         </statement>
       </block>
+      <block type="axis"></block>
     </xml>
   `;
 
-  const challengeBlocks = [challenge1, challenge2, challenge3, challenge4];
+  const challenge5 = `
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="rectangle">
+        <value name="width">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="height">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="x-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">200</field>
+          </shadow>
+        </value>
+        <value name="y-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">200</field>
+          </shadow>
+        </value>
+        <statement name="styles">
+          <shadow type="fill">
+            <value name="color">
+              <shadow type="color">
+                <field name="color">#ffccff</field>
+              </shadow>
+            </value>
+            <next>
+              <shadow type="stroke">
+                <value name="color">
+                  <shadow type="color">
+                    <field name="color">#993399</field>
+                  </shadow>
+                </value>
+                <next>
+                  <shadow type="stroke_weight">
+                    <value name="weight">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </shadow>
+                </next>
+              </shadow>
+            </next>
+          </shadow>
+        </statement>
+      </block>
+    </xml>
+  `;
+
+  const challenge6 = `
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="customized_ellipse">
+        <value name="width">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="height">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="x-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">200</field>
+          </shadow>
+        </value>
+        <value name="y-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">200</field>
+          </shadow>
+        </value>
+        <statement name="styles">
+          <shadow type="fill">
+            <value name="color">
+              <shadow type="color">
+                <field name="color">#ffccff</field>
+              </shadow>
+            </value>
+            <next>
+              <shadow type="stroke">
+                <value name="color">
+                  <shadow type="color">
+                    <field name="color">#993399</field>
+                  </shadow>
+                </value>
+                <next>
+                  <shadow type="stroke_weight">
+                    <value name="weight">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </shadow>
+                </next>
+              </shadow>
+            </next>
+          </shadow>
+        </statement>
+      </block>
+      <block type="rectangle">
+        <value name="width">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="height">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="x-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">200</field>
+          </shadow>
+        </value>
+        <value name="y-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">200</field>
+          </shadow>
+        </value>
+        <statement name="styles">
+          <shadow type="fill">
+            <value name="color">
+              <shadow type="color">
+                <field name="color">#ffccff</field>
+              </shadow>
+            </value>
+            <next>
+              <shadow type="stroke">
+                <value name="color">
+                  <shadow type="color">
+                    <field name="color">#993399</field>
+                  </shadow>
+                </value>
+                <next>
+                  <shadow type="stroke_weight">
+                    <value name="weight">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </shadow>
+                </next>
+              </shadow>
+            </next>
+          </shadow>
+        </statement>
+      </block>
+      <block type="fill">
+        <value name="color">
+          <shadow type="color">
+            <field name="color">#ffccff</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="stroke">
+        <value name="color">
+          <shadow type="color">
+            <field name="color">#993399</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="stroke_weight">
+        <value name="weight">
+          <shadow type="math_number">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+      </block>
+    </xml>
+  `;
+
+  const challengeBlocks = [challenge1, challenge2, challenge3, challenge4, challenge5, challenge6];
 
   // Initialize toolbox
   let toolbox = challengeBlocks[currentChallenge];
   workspace.updateToolbox(toolbox);
+
+  // Initialize
 });
