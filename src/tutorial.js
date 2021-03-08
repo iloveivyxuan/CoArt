@@ -98,12 +98,11 @@ document.addEventListener("DOMContentLoaded", function() {
     workspace.updateToolbox(toolbox);
     workspace.clear();
     Blockly.Xml.domToWorkspace(xml, window.workspace);
-    console.log(currentChallenge);
   });
 
   // Progress Bar
   const challengeNum = 6;
-  let currentChallenge = 5;
+  let currentChallenge = 0;
 
   const generateProgressBar = (num) => {
     let list = ``;
@@ -310,31 +309,31 @@ document.addEventListener("DOMContentLoaded", function() {
           </shadow>
         </value>
         <statement name="styles">
-          <shadow type="fill">
+          <block type="fill">
             <value name="color">
-              <shadow type="color">
+              <block type="color">
                 <field name="color">#ffccff</field>
-              </shadow>
+              </block>
             </value>
             <next>
-              <shadow type="stroke">
+              <block type="stroke">
                 <value name="color">
-                  <shadow type="color">
+                  <block type="color">
                     <field name="color">#993399</field>
-                  </shadow>
+                  </block>
                 </value>
                 <next>
-                  <shadow type="stroke_weight">
+                  <block type="stroke_weight">
                     <value name="weight">
-                      <shadow type="math_number">
+                      <block type="math_number">
                         <field name="NUM">3</field>
-                      </shadow>
+                      </block>
                     </value>
-                  </shadow>
+                  </block>
                 </next>
-              </shadow>
+              </block>
             </next>
-          </shadow>
+          </block>
         </statement>
       </block>
     </xml>

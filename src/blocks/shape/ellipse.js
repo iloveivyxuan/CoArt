@@ -101,60 +101,60 @@ pop();
 };
 
 // Ellipse can set position x and y
-Blockly.Blocks['ellipse'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Draw an ellipse");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("at")
-        .appendField("x")
-        .appendField(new Blockly.FieldNumber(0, 0, 350), "x-coordinate")
-        .appendField(" y")
-        .appendField(new Blockly.FieldNumber(0, 0, 350), "y-coordinate");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("width")
-        .appendField(new Blockly.FieldNumber(100, 0), "width");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("height")
-        .appendField(new Blockly.FieldNumber(100, 0), "height");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("fill color")
-        .appendField(new Blockly.FieldColour("#ffccff"), "fill");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("border color")
-        .appendField(new Blockly.FieldColour("#993399"), "stroke");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("border width")
-        .appendField(new Blockly.FieldNumber(3), "stroke_weight");
-    this.setInputsInline(false);
-    this.setColour('#5935BC');
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+// Blockly.Blocks['ellipse'] = {
+//   init: function() {
+//     this.appendDummyInput()
+//         .appendField("Draw an ellipse");
+//     this.appendDummyInput()
+//         .setAlign(Blockly.ALIGN_RIGHT)
+//         .appendField("at")
+//         .appendField("x")
+//         .appendField(new Blockly.FieldNumber(0, 0, 350), "x-coordinate")
+//         .appendField(" y")
+//         .appendField(new Blockly.FieldNumber(0, 0, 350), "y-coordinate");
+//     this.appendDummyInput()
+//         .setAlign(Blockly.ALIGN_RIGHT)
+//         .appendField("width")
+//         .appendField(new Blockly.FieldNumber(100, 0), "width");
+//     this.appendDummyInput()
+//         .setAlign(Blockly.ALIGN_RIGHT)
+//         .appendField("height")
+//         .appendField(new Blockly.FieldNumber(100, 0), "height");
+//     this.appendDummyInput()
+//         .setAlign(Blockly.ALIGN_RIGHT)
+//         .appendField("fill color")
+//         .appendField(new Blockly.FieldColour("#ffccff"), "fill");
+//     this.appendDummyInput()
+//         .setAlign(Blockly.ALIGN_RIGHT)
+//         .appendField("border color")
+//         .appendField(new Blockly.FieldColour("#993399"), "stroke");
+//     this.appendDummyInput()
+//         .setAlign(Blockly.ALIGN_RIGHT)
+//         .appendField("border width")
+//         .appendField(new Blockly.FieldNumber(3), "stroke_weight");
+//     this.setInputsInline(false);
+//     this.setColour('#5935BC');
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
 
-Blockly.JavaScript['ellipse'] = function(block) {
-  var x_coordinate = block.getFieldValue('x-coordinate');
-  var y_coordinate = block.getFieldValue('y-coordinate');
-  var width = block.getFieldValue('width');
-  var height = block.getFieldValue('height');
-  var colour_stroke = block.getFieldValue('stroke');
-  var stroke_weight = block.getFieldValue('stroke_weight');
-  var colour_fill = block.getFieldValue('fill');
-  const code = `
-    stroke('${colour_stroke}');
-    strokeWeight('${stroke_weight}')
-    fill('${colour_fill}');
-    ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
-  `;
-  return code;
-};
+// Blockly.JavaScript['ellipse'] = function(block) {
+//   var x_coordinate = block.getFieldValue('x-coordinate');
+//   var y_coordinate = block.getFieldValue('y-coordinate');
+//   var width = block.getFieldValue('width');
+//   var height = block.getFieldValue('height');
+//   var colour_stroke = block.getFieldValue('stroke');
+//   var stroke_weight = block.getFieldValue('stroke_weight');
+//   var colour_fill = block.getFieldValue('fill');
+//   const code = `
+//     stroke('${colour_stroke}');
+//     strokeWeight('${stroke_weight}')
+//     fill('${colour_fill}');
+//     ellipse(${x_coordinate}, ${y_coordinate}, ${width}, ${height});
+//   `;
+//   return code;
+// };
 
 // Customized Ellipse
 Blockly.Blocks['customized_ellipse'] = {
