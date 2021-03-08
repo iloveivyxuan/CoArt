@@ -29,14 +29,14 @@ for (let i = minL; i <= maxL; i += step) {
   textSize(10);
   if (i == 0) {
     textAlign(CENTER, TOP);
-    text(\`\${i}\`, 2, 2);
+    text(i, 2, 2);
   } else {
     textAlign(LEFT, CENTER);
-    text(\`\${i}\`, 2, i);
+    text(i, 2, i);
   }
   textAlign(CENTER, TOP);
   if (i !== 0) {
-    text(\`\${i}\`, i, 2);
+    text(i, i, 2);
   }
 }
 pop();
