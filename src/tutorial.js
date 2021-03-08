@@ -8,27 +8,6 @@ import { modal, toggleModal, modalContinueButton } from './js/modal.js';
 import './js/canvas';
 
 document.addEventListener("DOMContentLoaded", function() {
-  // const saveButton = document.getElementById('saveButton');
-  // saveButton.addEventListener('click', function() {
-  //   saveCanvas('myCanvas');
-  // });
-
-  // const workspace = Blockly.inject('blocklyDiv',
-  //   {
-  //     toolbox: document.getElementById('toolbox'),
-  //     media: 'media/',
-  //     zoom:
-  //     	{
-  //     		controls: true,
-  //     		startScale: 1.0,
-  //     		maxScale: 3,
-  //     		minScale: 0.3,
-  //     		scaleSpeed: 1.2,
-  //     		pinch: true
-  //     	},
-  //     trashcan: true
-  //   });
-
   const lang = 'JavaScript';
   const button = document.getElementById('blocklyButton');
 
@@ -84,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
     if (isSuccess) {
-      toggleModal();
+      setTimeout(toggleModal, 300);
     }
   }
 
@@ -98,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     workspace.updateToolbox(toolbox);
     workspace.clear();
     Blockly.Xml.domToWorkspace(xml, window.workspace);
+    button.click();
   });
 
   // Progress Bar
