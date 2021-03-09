@@ -21,19 +21,6 @@ body {
   box-sizing: border-box;
 }
 
-.tip-wrapper {
-  width: 100%;
-  height: 170px;
-  background-color: #f3f3fb;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.tip-wrapper .des {
-  color: #42474F;
-  margin: 20px 60px;
-}
-
 .main-wrapper {
   width: 100%;
   height: 100%;

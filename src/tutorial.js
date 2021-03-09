@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     workspace.updateToolbox(toolbox);
     workspace.clear();
     Blockly.Xml.domToWorkspace(xml, window.workspace);
+    document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
     button.click();
   });
 
@@ -139,16 +140,6 @@ document.addEventListener("DOMContentLoaded", function() {
     null,
     `ellipse(200, 200, 100, 100)`,
     null,
-  ];
-
-  // Challenge Descriptions
-  const challengeDes = [
-    `How block works? It's easy. Just drag and drop. Then you are done.
-    Drag the 'Draw an ellipse' block into the workspace, and connect it inside the 'setup' block.
-    Change width and height to create an ellipse.`,
-    `Let's fill the circle with your favorite color. Drag`,
-    `Canvas and coordinates
-    `
   ];
 
   // Challenge Blocks XML
@@ -449,5 +440,34 @@ document.addEventListener("DOMContentLoaded", function() {
   let toolbox = challengeBlocks[currentChallenge];
   workspace.updateToolbox(toolbox);
 
-  // Initialize
+  // Challenge Descriptions
+  const challengeDes = [
+    `
+    <p>How block works? It's easy. Drag and drop. Then you are done.</p>
+    <p>Drag the 'Draw an ellipse' into the workspace, and connect it inside the 'setup' and under 'background'.</p>
+    <p>Change width and height to create an ellipse.</p>
+    `,
+    `
+      Let's fill the circle with your favorite color.
+      Drag 'ellipse' block into 'setup' block and under 'background' block.
+      Then drag 'fill' block inside 'ellipse' block.
+    `,
+    `
+      More APIs
+    `,
+    `
+      Canvas and coordinates
+      Change ellipse position.
+    `,
+    `
+      Besides ellipse, we can also draw rectangle.
+    `,
+    `
+      Final challenge: using blocks that we've seen, draw an art.
+      Need
+    `
+  ];
+
+  // Initialize ChallengeDes
+  document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
 });
