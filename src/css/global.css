@@ -173,6 +173,7 @@ code.hljs {
   box-sizing: border-box;
   padding: 1em;
   border-radius: 6px;
+  overflow-x: auto;
 }
 
 
