@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Progress Bar
   const challengeNum = 6;
-  let currentChallenge = 0;
+  let currentChallenge = 5;
 
   const generateProgressBar = (num) => {
     let list = ``;
@@ -417,6 +417,7 @@ document.addEventListener("DOMContentLoaded", function() {
           </shadow>
         </value>
       </block>
+      <block type="no_stroke"></block>
       <block type="stroke">
         <value name="color">
           <shadow type="color">

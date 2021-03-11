@@ -13,7 +13,6 @@ Blockly.Blocks['no_fill'] = {
 };
 
 Blockly.JavaScript['no_fill'] = function(block) {
-  var color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `noFill(${color});\n`;
+  var code = `noFill();\n`;
   return code;
 };
