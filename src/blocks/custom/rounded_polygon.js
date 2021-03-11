@@ -25,23 +25,14 @@ Blockly.defineBlocksWithJsonArray([
     "nextStatement": null,
     "colour": '#EE8DB0',
     "tooltip": "",
-    "helpUrl": ""
+    "helpUrl": "/block.html?library=Polygon&func=roundedPolygon"
   }
 ]);
 
 Blockly.JavaScript['rounded_polygon'] = function(block) {
   var sides = Blockly.JavaScript.valueToCode(block, 'sides', Blockly.JavaScript.ORDER_ATOMIC);
   var radius = Blockly.JavaScript.valueToCode(block, 'radius', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `
-// Draw Rounded Polygon
-beginShape();
-var angle = TWO_PI / ${sides};
-for (var i = 0; i <= ${sides} + 2; i++) {
-  var x = cos(angle * i) * ${radius};
-  var y = sin(angle * i) * ${radius};
-  curveVertex(x, y);
-}
-endShape();
+  var code = `Polygon.roundedPolygon(${sides}, ${radius});
 `;
   return code;
 };

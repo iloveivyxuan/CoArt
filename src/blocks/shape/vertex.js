@@ -77,3 +77,41 @@ Blockly.JavaScript['vertex'] = function(block) {
 `;
   return code;
 };
+
+Blockly.defineBlocksWithJsonArray([
+  {
+    "type": "curve_vertex",
+    "message0": "curve vertex %1 x %2 y %3",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "x",
+        "check": "Number",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "y",
+        "check": "Number",
+        "align": "RIGHT"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": '#6742D0',
+    "tooltip": "Specifies vertex coordinates for curves",
+    "helpUrl": "https://p5js.org/reference/#/p5/curveVertex"
+  }
+]);
+
+Blockly.JavaScript['curve_vertex'] = function(block) {
+  var x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `curveVertex(${x}, ${y});
+`;
+  return code;
+};

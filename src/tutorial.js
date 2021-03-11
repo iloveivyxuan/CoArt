@@ -431,6 +431,7 @@ document.addEventListener("DOMContentLoaded", function() {
           </shadow>
         </value>
       </block>
+      <block type="axis"></block>
     </xml>
   `;
 
