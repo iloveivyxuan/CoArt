@@ -94,15 +94,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       newFuncCallBlock += `</block>`
 
-      var libraryRef = firebase.database().ref(`libraries`);
+      var libraryRef = firebase.database().ref(`libraries/Mine`);
       libraryRef.update({
-        "Mine": {
-          [newFuncName]: {
-            'function': newFunction,
-            'funcCallBlock': newFuncCallBlock,
-            'blockDef': blockDef,
-            'blockCode': blockCode
-          }
+        [newFuncName]: {
+          'function': newFunction,
+          'funcCallBlock': newFuncCallBlock,
+          'funcDefBlock': xml_text,
+          'blockDef': blockDef,
+          'blockCode': blockCode,
         }
       });
     });
