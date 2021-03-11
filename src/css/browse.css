@@ -23,8 +23,8 @@ body {
 }
 
 .shot {
-	padding-bottom: 75%;
-	background-color: red;
+	/*padding-bottom: 75%;*/
+	/*background-color: red;*/
 }
 
 .info {
@@ -38,4 +38,5 @@ body {
 .user-info {
 	display: flex;
 	align-items: center;
+	margin: 0 auto;
 }

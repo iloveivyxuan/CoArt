@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Progress Bar
-  const challengeNum = 6;
+  const challengeNum = 5;
   let currentChallenge = 0;
 
   const generateProgressBar = (num) => {
@@ -344,7 +344,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const challenge4 = `
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <block type="customized_ellipse">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="rectangle">
         <value name="width">
           <shadow type="math_number">
             <field name="NUM">100</field>
@@ -357,41 +364,48 @@ document.addEventListener("DOMContentLoaded", function() {
         </value>
         <value name="x-coordinate">
           <shadow type="math_number">
-            <field name="NUM">200</field>
+            <field name="NUM">0</field>
           </shadow>
         </value>
         <value name="y-coordinate">
           <shadow type="math_number">
-            <field name="NUM">200</field>
+            <field name="NUM">0</field>
           </shadow>
         </value>
         <statement name="styles">
-          <block type="fill">
+          <shadow type="fill">
             <value name="color">
-              <block type="color">
+              <shadow type="color">
                 <field name="color">#ffccff</field>
-              </block>
+              </shadow>
             </value>
             <next>
-              <block type="stroke">
+              <shadow type="stroke">
                 <value name="color">
-                  <block type="color">
+                  <shadow type="color">
                     <field name="color">#993399</field>
-                  </block>
+                  </shadow>
                 </value>
                 <next>
-                  <block type="stroke_weight">
+                  <shadow type="stroke_weight">
                     <value name="weight">
-                      <block type="math_number">
+                      <shadow type="math_number">
                         <field name="NUM">3</field>
-                      </block>
+                      </shadow>
                     </value>
-                  </block>
+                  </shadow>
                 </next>
-              </block>
+              </shadow>
             </next>
-          </block>
+          </shadow>
         </statement>
+      </block>
+      <block type="rotate_by_degree" id="8_}(QaWqOTdeq7aK]6~B">
+        <value name="degree">
+          <block type="math_number" id="=Q$h[lZEU}d^2Fj!h7,">
+            <field name="NUM">4</field>
+          </block>
+        </value>
       </block>
       <block type="axis"></block>
     </xml>
@@ -399,6 +413,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const challenge5 = `
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
       <block type="rectangle">
         <value name="width">
           <shadow type="math_number">
@@ -412,144 +433,48 @@ document.addEventListener("DOMContentLoaded", function() {
         </value>
         <value name="x-coordinate">
           <shadow type="math_number">
-            <field name="NUM">200</field>
+            <field name="NUM">0</field>
           </shadow>
         </value>
         <value name="y-coordinate">
           <shadow type="math_number">
-            <field name="NUM">200</field>
+            <field name="NUM">0</field>
           </shadow>
         </value>
         <statement name="styles">
-          <block type="fill">
+          <shadow type="fill">
             <value name="color">
-              <block type="color">
+              <shadow type="color">
                 <field name="color">#ffccff</field>
-              </block>
+              </shadow>
             </value>
             <next>
-              <block type="stroke">
+              <shadow type="stroke">
                 <value name="color">
-                  <block type="color">
+                  <shadow type="color">
                     <field name="color">#993399</field>
-                  </block>
+                  </shadow>
                 </value>
                 <next>
-                  <block type="stroke_weight">
+                  <shadow type="stroke_weight">
                     <value name="weight">
-                      <block type="math_number">
+                      <shadow type="math_number">
                         <field name="NUM">3</field>
-                      </block>
+                      </shadow>
                     </value>
-                  </block>
+                  </shadow>
                 </next>
-              </block>
+              </shadow>
             </next>
+          </shadow>
+        </statement>
+      </block>
+      <block type="rotate_by_degree" id="8_}(QaWqOTdeq7aK]6~B">
+        <value name="degree">
+          <block type="math_number" id="=Q$h[lZEU}d^2Fj!h7,">
+            <field name="NUM">4</field>
           </block>
-        </statement>
-      </block>
-    </xml>
-  `;
-
-  const challenge6 = `
-    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <block type="customized_ellipse">
-        <value name="width">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
         </value>
-        <value name="height">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-        <value name="x-coordinate">
-          <shadow type="math_number">
-            <field name="NUM">200</field>
-          </shadow>
-        </value>
-        <value name="y-coordinate">
-          <shadow type="math_number">
-            <field name="NUM">200</field>
-          </shadow>
-        </value>
-        <statement name="styles">
-          <shadow type="fill">
-            <value name="color">
-              <shadow type="color">
-                <field name="color">#ffccff</field>
-              </shadow>
-            </value>
-            <next>
-              <shadow type="stroke">
-                <value name="color">
-                  <shadow type="color">
-                    <field name="color">#993399</field>
-                  </shadow>
-                </value>
-                <next>
-                  <shadow type="stroke_weight">
-                    <value name="weight">
-                      <shadow type="math_number">
-                        <field name="NUM">3</field>
-                      </shadow>
-                    </value>
-                  </shadow>
-                </next>
-              </shadow>
-            </next>
-          </shadow>
-        </statement>
-      </block>
-      <block type="rectangle">
-        <value name="width">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-        <value name="height">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-        <value name="x-coordinate">
-          <shadow type="math_number">
-            <field name="NUM">200</field>
-          </shadow>
-        </value>
-        <value name="y-coordinate">
-          <shadow type="math_number">
-            <field name="NUM">200</field>
-          </shadow>
-        </value>
-        <statement name="styles">
-          <shadow type="fill">
-            <value name="color">
-              <shadow type="color">
-                <field name="color">#ffccff</field>
-              </shadow>
-            </value>
-            <next>
-              <shadow type="stroke">
-                <value name="color">
-                  <shadow type="color">
-                    <field name="color">#993399</field>
-                  </shadow>
-                </value>
-                <next>
-                  <shadow type="stroke_weight">
-                    <value name="weight">
-                      <shadow type="math_number">
-                        <field name="NUM">3</field>
-                      </shadow>
-                    </value>
-                  </shadow>
-                </next>
-              </shadow>
-            </next>
-          </shadow>
-        </statement>
       </block>
       <block type="fill">
         <value name="color">
@@ -577,7 +502,7 @@ document.addEventListener("DOMContentLoaded", function() {
     </xml>
   `;
 
-  const challengeBlocks = [challenge1, challenge2, challenge3, challenge4, challenge5, challenge6];
+  const challengeBlocks = [challenge1, challenge2, challenge3, challenge4, challenge5];
 
   // Initialize toolbox
   let toolbox = challengeBlocks[currentChallenge];
@@ -590,7 +515,6 @@ document.addEventListener("DOMContentLoaded", function() {
     <p>This time we have three new blocks <em>translate</em>, <em>Rotate degree</em> and <em>show coordinate</em></p>
     <p>Drag <em>Rotate degree</em> and <em>show coordinate</em> into <em>draw</em>, and see what happens.</p>
     <p>Get more <bold>help</bold> by right clicking the block.</p>
-    <p><button class="nextTask">Next Task</button></p>
     `,
     `
       <p>⭐Congradulations, you learned how rotate and translate works!⭐</p>
@@ -598,27 +522,26 @@ document.addEventListener("DOMContentLoaded", function() {
       <p><tip>Tips: The order of <em>Rotate degree</em> and <em>rectangle</em> matters</tip></p>
     `,
     `
-      <p>⭐Congradulations, you now have one tilted tectangle!⭐</p>
-      <p>What if we want three tilted rectangles, one rotate 4 degree, the second rotate 8 degree, and the last rotate 12 degree?</p>
+      <p>⭐Congradulations, you now have one tilted rectangle!⭐</p>
+      <p>What if we want three tilted rectangles, one rotate 4 degree, the second rotate 8 degrees, and the last rotate 12 degrees?</p>
     `,
     `
-      Canvas and coordinates
-      Change ellipse position.
+      <p>There's a new block <em>repeat</em></p>
+      <p>Drag <em>Repeat</em> into <em>draw</em></p>
+      <p>Drag <em>Rotate degree</em> and <em>rectangle</em> into <em>repeat</em>, and see what happens.</p>
     `,
     `
-      Besides ellipse, we can also draw rectangle.
-    `,
-    `
-      Final challenge: using blocks that we've seen, draw an art.
-      Need
+      <p>⭐Welcome to the final challenge⭐</p>
+      <p>Using blocks that we've seen, draw anything you want.</p>
+      <p>Find more examples <a href="/browse.html">here</a></p>
     `
   ];
 
   // Initialize ChallengeDes
   document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
 
-  const nextChallengeButton = document.querySelector('.nextTask');
-  nextChallengeButton.addEventListener('click', ()=> {
+  const nextButton = document.querySelector("#nextTask");
+  nextButton.addEventListener('click', ()=> {
     document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.add('done');
     document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.remove('current', 'active');
     currentChallenge += 1;

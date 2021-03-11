@@ -4,6 +4,7 @@
 	background-color: #f3f3fb;
 	border-radius: 20px;
   margin-bottom: 20px;
+  /*position: relative;*/
 }
 
 .tip-wrapper .des {
@@ -12,6 +13,21 @@
   margin-bottom: 0;
   overflow-y: auto;
   height: 106px;
+}
+
+#nextTask {
+	border: none;
+  width: 20px;
+  height: 60px;
+  background-image: url(../images/next.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  background-position: center;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 72px;
 }
 
 .main-wrapper {
