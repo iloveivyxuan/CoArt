@@ -10,6 +10,8 @@ import 'highlight.js/styles/darcula.css';
 
 hljs.registerLanguage('processing', processing);
 
+window.Blockly = Blockly;
+
 registerTooltipExtension((block) => {
   // Custom tooltip render function.
   const tooltip = document.createElement('div');

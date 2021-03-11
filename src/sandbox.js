@@ -4,10 +4,21 @@ import './js/canvas';
 import { firebase, database } from './js/database_init';
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Mine Library
+  var mineRef = firebase.database().ref(`libraries/Mine`);
+  const geval = eval;
+  mineRef.on('value', (snapshot) => {
+    const mineLibrary = snapshot.val();
+    const allMethods = Object.keys(mineLibrary);
+    for (var method of allMethods) {
+      geval(mineLibrary[method]['blockDef']);
+      geval(mineLibrary[method]['blockCode']);
+    }
+  });
+
   var libraries = [];
   var data;
 
-  const geval = eval;
   var libraryBody = ``;
   var libraryRef = firebase.database().ref(`libraries/`);
   libraryRef.on('value', (snapshot) => {
@@ -25,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
           ${methodsText}
         }
       `
+      geval(libraryBody);
     }
-    geval(libraryBody);
 
     var toolbox = document.querySelector('#toolbox').innerHTML;
     var innerCategories = ``;

@@ -140,11 +140,28 @@ canvas {
   background-color: transparent;
   background-position: center;
   cursor: pointer;
-  position: absolute;
   right: 0;
 }
 
 .btn.save:focus {
+  outline: none;
+}
+
+.btn.upload {
+  border: none;
+  width: 20px;
+  height: 60px;
+  float: left;
+  background-image: url(../images/upload.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  background-position: center;
+  cursor: pointer;
+  right: 0;
+}
+
+.btn.upload:focus {
   outline: none;
 }
 
