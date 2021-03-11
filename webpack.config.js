@@ -9,6 +9,7 @@ module.exports = {
   mode: 'development',
   entry: {
     tutorial: './src/tutorial.js',
+    tutorial_1: './src/tutorial_1.js',
     sandbox: './src/sandbox.js',
     browse: './src/browse.js',
     artwork: './src/artwork.js',
@@ -30,6 +31,12 @@ module.exports = {
       filename: 'tutorial.html',
       template: './src/assets/tutorial.html',
       chunks: ['tutorial'],
+      favicon: './src/images/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'tutorial_1.html',
+      template: './src/assets/tutorial.html',
+      chunks: ['tutorial_1'],
       favicon: './src/images/favicon.png'
     }),
     new HtmlWebpackPlugin({

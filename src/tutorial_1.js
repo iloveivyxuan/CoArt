@@ -6,6 +6,9 @@ import './css/global.css';
 import './css/modal.css';
 import { modal, toggleModal, modalContinueButton } from './js/modal.js';
 import './js/canvas';
+import { rotateByDegree } from "./blocks/index";
+
+window.rotateByDegree = rotateByDegree;
 
 document.addEventListener("DOMContentLoaded", function() {
   const lang = 'JavaScript';
@@ -41,6 +44,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 </value>
               </block>
             </next>
+          </block>
+        </statement>
+      </block>
+      <block type="draw" id="lVC2{h+K78%RObxdtl%?" x="104" y="210">
+        <statement name="draw">
+          <block type="translate" id="~=hmY45m]G6;:brZ=v36">
+            <field name="x">175</field>
+            <field name="y">175</field>
           </block>
         </statement>
       </block>
@@ -122,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
       workspace.updateToolbox(toolbox);
       workspace.clear();
       Blockly.Xml.domToWorkspace(xml, window.workspace);
-      document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
+      document.querySelector('.des').innerHTML = challengeDes[backToChallenge];
     });
   }
 
@@ -147,59 +158,187 @@ document.addEventListener("DOMContentLoaded", function() {
   // Challenge Blocks XML
   const challenge1 = `
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <block type="simpleEllipse">
-        <field name="position">center</field>
-        <field name="width">100</field>
-        <field name="height">100</field>
+      <block type="rectangle">
+        <value name="width">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="height">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="x-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="y-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <statement name="styles">
+          <shadow type="fill">
+            <value name="color">
+              <shadow type="color">
+                <field name="color">#ffccff</field>
+              </shadow>
+            </value>
+            <next>
+              <shadow type="stroke">
+                <value name="color">
+                  <shadow type="color">
+                    <field name="color">#993399</field>
+                  </shadow>
+                </value>
+                <next>
+                  <shadow type="stroke_weight">
+                    <value name="weight">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </shadow>
+                </next>
+              </shadow>
+            </next>
+          </shadow>
+        </statement>
       </block>
+      <block type="rotate_by_degree" id="8_}(QaWqOTdeq7aK]6~B">
+        <value name="degree">
+          <block type="math_number" id="=Q$h[lZEU}d^2Fj!h7,">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+      </block>
+      <block type="axis"></block>
     </xml>
   `;
 
   const challenge2 = `
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <block type="basicEllipse">
-         <field name="position">center</field>
-         <field name="width">100</field>
-         <field name="height">100</field>
-      </block>
-      <block type="fill">
-        <value name="color">
-          <shadow type="color">
-            <field name="color">#ffccff</field>
+      <block type="rectangle">
+        <value name="width">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
           </shadow>
         </value>
+        <value name="height">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="x-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="y-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <statement name="styles">
+          <shadow type="fill">
+            <value name="color">
+              <shadow type="color">
+                <field name="color">#ffccff</field>
+              </shadow>
+            </value>
+            <next>
+              <shadow type="stroke">
+                <value name="color">
+                  <shadow type="color">
+                    <field name="color">#993399</field>
+                  </shadow>
+                </value>
+                <next>
+                  <shadow type="stroke_weight">
+                    <value name="weight">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </shadow>
+                </next>
+              </shadow>
+            </next>
+          </shadow>
+        </statement>
       </block>
+      <block type="rotate_by_degree" id="8_}(QaWqOTdeq7aK]6~B">
+        <value name="degree">
+          <block type="math_number" id="=Q$h[lZEU}d^2Fj!h7,">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+      </block>
+      <block type="axis"></block>
     </xml>
   `;
 
   const challenge3 = `
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <block type="basicEllipse">
-         <field name="position">center</field>
-         <field name="width">100</field>
-         <field name="height">100</field>
-      </block>
-      <block type="fill">
-        <value name="color">
-          <shadow type="color">
-            <field name="color">#ffccff</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="stroke">
-        <value name="color">
-          <shadow type="color">
-            <field name="color">#993399</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="stroke_weight">
-        <value name="weight">
+      <block type="rectangle">
+        <value name="width">
           <shadow type="math_number">
-            <field name="NUM">3</field>
+            <field name="NUM">100</field>
           </shadow>
         </value>
+        <value name="height">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="x-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="y-coordinate">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <statement name="styles">
+          <shadow type="fill">
+            <value name="color">
+              <shadow type="color">
+                <field name="color">#ffccff</field>
+              </shadow>
+            </value>
+            <next>
+              <shadow type="stroke">
+                <value name="color">
+                  <shadow type="color">
+                    <field name="color">#993399</field>
+                  </shadow>
+                </value>
+                <next>
+                  <shadow type="stroke_weight">
+                    <value name="weight">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </shadow>
+                </next>
+              </shadow>
+            </next>
+          </shadow>
+        </statement>
       </block>
+      <block type="rotate_by_degree" id="8_}(QaWqOTdeq7aK]6~B">
+        <value name="degree">
+          <block type="math_number" id="=Q$h[lZEU}d^2Fj!h7,">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+      </block>
+      <block type="axis"></block>
     </xml>
   `;
 
@@ -447,42 +586,47 @@ document.addEventListener("DOMContentLoaded", function() {
   // Challenge Descriptions
   const challengeDes = [
     `
-    <p>⭐Welcome⭐</p>
-    <p> First let's talk about <em>workspace</em>.</p>
-    <p>Your workspace is the area below the promt where you'll connect blocks to build your program.</p>
-    <p>Drag the <em>Draw an ellipse</em> into the workspace, and connect it at the end of <em>setup</em>.</p>
-    <p><Tip>Tips: You can change <bold>width</bold> and <bold>height</bold> of the ellipse if you want.</p>
+    <p>⭐Welcome to Loop⭐</p>
+    <p>This time we have three new blocks <em>translate</em>, <em>Rotate degree</em> and <em>show coordinate</em></p>
+    <p>Drag <em>Rotate degree</em> and <em>show coordinate</em> into <em>draw</em>, and see what happens.</p>
+    <p>Get more <bold>help</bold> by right clicking the block.</p>
+    <p><button class="nextTask">Next Task</button></p>
     `,
     `
-      <p>⭐Congradualations, you understand basic operation of blocks⭐</p>
-      <p>Blocks can be dragged out from the toolbox, connected, duplicated, and deleted.</p>
-      <p>Let's fill the ellipse with your favorite color.</p>
-      <p><tip>Tips: Drag <em>ellipse</em> block into <em>setup</em> block and under <em>background</em> block.</tip></p>
-      <p><tip>Then drag <em>fill</em> block inside <em>ellipse</em> block..</tip></p>
+      <p>⭐Congradulations, you learned how rotate and translate works!⭐</p>
+      <p>Can you draw a tilted rectangle on the canvas?</p>
+      <p><tip>Tips: The order of <em>Rotate degree</em> and <em>rectangle</em> matters</tip></p>
     `,
     `
-      <p>⭐More styles to choose⭐</p>
-      <p>There're more options for you to choose to style your ellipse, explore them</p>
-      <p>Let mouse stay on block for 1s, a short description will show up</p>
-      <p>Right click on the block, there's a <bold>help</bold> option where you can get more details</p>
+      <p>⭐Congradulations, you now have one tilted tectangle!⭐</p>
+      <p>What if we want three tilted rectangles, one rotate 4 degree, the second rotate 8 degree, and the last rotate 12 degree?</p>
     `,
     `
-      <p>⭐What is Canvas?⭐</p>
-      <p>Canvas is like a screen where present the outcome of your block program. Canvas has width and height, can also has coordinates</p>
-      <p>Drag the <em>show coordinate</em> into the workspace, and connect it at the end of <em>setup</em>.</p>
-      <p>Can you draw an ellipse at position (100, 200)</p>
+      Canvas and coordinates
+      Change ellipse position.
     `,
     `
-      <p>⭐More shapes⭐</p>
-      <p>Besides ellipse, we can also draw rectangle.</p>
-      <p>Drag <em>rectangle</em> into the workspace, and connect it at the end of <em>setup</em>.</p>
+      Besides ellipse, we can also draw rectangle.
     `,
     `
-      <p>⭐Congradualations, you are at final challenge!⭐</p>
-      <p>Using blocks that we've seen, draw anything you want.</p>
+      Final challenge: using blocks that we've seen, draw an art.
+      Need
     `
   ];
 
   // Initialize ChallengeDes
   document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
+
+  const nextChallengeButton = document.querySelector('.nextTask');
+  nextChallengeButton.addEventListener('click', ()=> {
+    document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.add('done');
+    document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.remove('current', 'active');
+    currentChallenge += 1;
+    document.querySelector(`li[data-challenge='${currentChallenge}']`).classList.add('current', 'active');
+    toolbox = challengeBlocks[currentChallenge];
+    workspace.updateToolbox(toolbox);
+    workspace.clear();
+    Blockly.Xml.domToWorkspace(xml, window.workspace);
+    document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
+  });
 });

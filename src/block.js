@@ -10,26 +10,19 @@ const funcName = urlParams.get('func');
 console.log(libraryName)
 console.log(funcName)
 
-document.addEventListener("DOMContentLoaded", function() {
-  const geval = eval;
-
-  var funcRef = firebase.database().ref(`libraries/${libraryName}/${funcName}`);
-  funcRef.on('value', (snapshot) => {
-    const data = snapshot.val();
-    const blocks = data['funcDefBlock'];
-    const xml = Blockly.Xml.textToDom(blocks);
-    Blockly.Xml.domToWorkspace(xml, window.workspace);
-    generateUploadBlock();
-  });
-
-  const generateUploadBlock = () => {
+const generateUploadBlock = () => {
+    const uploadButton = document.querySelector('#uploadButton');
     uploadButton.addEventListener('click', () => {
-      const uploadButton = document.querySelector('#uploadButton');
       var xml = Blockly.Xml.workspaceToDom(workspace);
       var xml_text = Blockly.Xml.domToPrettyText(xml);
       const newFuncName = xml_text.split('<field name="NAME">')[1].split('</field>')[0];
 
-      const args = xml_text.match(/<arg name="(.*)" varid="/g).map(x => x.split('"')[1]);
+      var args = xml_text.match(/<arg name="(.*)" varid="/g);
+      if (args) {
+        args = args.map(x => x.split('"')[1]);
+      } else {
+        args = [];
+      }
       const argsNum = args.length;
 
       var message0 = `${newFuncName} %1`
@@ -105,5 +98,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     });
+  }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const geval = eval;
+
+  if (queryString !== "") {
+    var funcRef = firebase.database().ref(`libraries/${libraryName}/${funcName}`);
+    funcRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      const blocks = data['funcDefBlock'];
+      const xml = Blockly.Xml.textToDom(blocks);
+      Blockly.Xml.domToWorkspace(xml, window.workspace);
+      generateUploadBlock();
+    });
+  } else {
+    generateUploadBlock();
   }
 });

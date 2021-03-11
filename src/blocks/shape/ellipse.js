@@ -70,8 +70,8 @@ Blockly.Blocks['basicEllipse'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour('#6d46d9');
- this.setTooltip("");
- this.setHelpUrl("");
+ this.setTooltip("Draws an ellipse (oval) to the screen");
+ this.setHelpUrl("https://p5js.org/reference/#/p5/ellipse");
   }
 };
 
