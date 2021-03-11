@@ -10,6 +10,10 @@ body {
   background-color: #fbfaff;
 }
 
+p {
+  margin: 10px;
+}
+
 .container {
   width: 90%;
   height: 100%;

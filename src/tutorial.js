@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Progress Bar
   const challengeNum = 6;
-  let currentChallenge = 5;
+  let currentChallenge = 0;
 
   const generateProgressBar = (num) => {
     let list = ``;
@@ -121,6 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
       toolbox = challengeBlocks[backToChallenge];
       workspace.updateToolbox(toolbox);
       workspace.clear();
+      Blockly.Xml.domToWorkspace(xml, window.workspace);
+      document.querySelector('.des').innerHTML = challengeDes[currentChallenge];
     });
   }
 
@@ -445,6 +447,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Challenge Descriptions
   const challengeDes = [
     `
+    <p>⭐Welcome⭐</p>
+    <p> First let's talk about <em>workspace</em>.</p>
+    <p>Your workspace is the area where you'll connect blocks to build your program.</p>
     <p>How block works? It's easy. Drag and drop. Then you are done.</p>
     <p>Drag the 'Draw an ellipse' into the workspace, and connect it inside the 'setup' and under 'background'.</p>
     <p>Change width and height to create an ellipse.</p>

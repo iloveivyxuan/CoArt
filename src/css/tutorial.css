@@ -9,8 +9,9 @@
 .tip-wrapper .des {
   color: #42474F;
   margin: 20px 60px;
+  margin-bottom: 0;
   overflow-y: auto;
-  height: 72px;
+  height: 106px;
 }
 
 .main-wrapper {
