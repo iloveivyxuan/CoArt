@@ -13,9 +13,15 @@ body {
 .grid {
 	display: grid;
 	list-style: none;
-	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 36px;
 	padding: 0 32px;
+	place-items: center;
+}
+
+canvas {
+	border: 1px solid #ddd;
+	border-radius: 20px;
 }
 
 .item {

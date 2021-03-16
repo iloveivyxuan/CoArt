@@ -480,6 +480,7 @@ document.addEventListener("DOMContentLoaded", function() {
     `
       <p>⭐Congradualations, you are at final challenge!⭐</p>
       <p>Using blocks that we've seen, draw anything you want.</p>
+      <p>Find more examples <a href="/browse.html">here</a></p>
     `
   ];
 
