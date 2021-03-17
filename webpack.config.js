@@ -12,6 +12,7 @@ module.exports = {
     tutorial_1: './src/tutorial_1.js',
     sandbox: './src/sandbox.js',
     browse: './src/browse.js',
+    gallery: './src/gallery.js',
     artwork: './src/artwork.js',
     block: './src/block.js',
     home_page: './src/home_page.js',
@@ -62,6 +63,12 @@ module.exports = {
       filename: 'block.html',
       template: './src/assets/block.html',
       chunks: ['block'],
+      favicon: './src/images/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'gallery.html',
+      template: './src/assets/gallery.html',
+      chunks: ['gallery'],
       favicon: './src/images/favicon.png'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),

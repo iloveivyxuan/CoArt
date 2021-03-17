@@ -62,5 +62,29 @@ document.addEventListener("DOMContentLoaded", function() {
     </xml>
     `;
     workspace.updateToolbox(toolbox);
+
+    // Share Button
+    const shareButton = document.querySelector('#shareButton');
+
+    shareButton.addEventListener('click', () => {
+      const canvas = document.querySelector('canvas')
+      if (!canvas) {
+        return;
+      }
+
+      const imageData = canvas.toDataURL('image/png');
+      var galleryRef = firebase.database().ref(`gallery`);
+
+      var xml = Blockly.Xml.workspaceToDom(workspace);
+      var xml_text = Blockly.Xml.domToPrettyText(xml);
+
+      var data = {
+        xml: xml_text,
+        imageData: imageData,
+        author: 'ivyxuan'
+      }
+
+      galleryRef.push(data);
+    });
   });
 });
