@@ -5,6 +5,7 @@ require("./shape/rectangle");
 require("./shape/vertex");
 require("./math/map");
 require("./math/distance");
+require("./math/sin_cos");
 require("./color/picker");
 require("./color/rgba");
 require("./style/fill");
