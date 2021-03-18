@@ -7,14 +7,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		const data = snapshot.val();
 		var keys = Object.keys(data);
 		for (var key of keys) {
-			// var image = new Image();
-			// image.src = data[key].imageData;
 			var name = data[key].author;
+			var id = key;
 			var item = `
 			<li class="item">
-				<div class="shot">
+				<a class="shot" href='/artwork.html?id=${id}' target="_blank">
 					<img src=${data[key].imageData}>
-				</div>
+				</a>
         <div class="info">
           <div class="user-info">
             <span class="name">${name}</span>
