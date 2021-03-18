@@ -2,6 +2,8 @@ import './blocks/index';
 import './css/global.css';
 import './js/canvas';
 import { firebase, database } from './js/database_init';
+import './css/modal.css';
+import { modal, toggleModal, modalContinueButton } from './js/modal.js';
 
 document.addEventListener("DOMContentLoaded", function() {
   // Mine Library
@@ -85,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       galleryRef.push(data);
+
+      toggleModal();
     });
   });
 });

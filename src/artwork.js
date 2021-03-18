@@ -2,6 +2,8 @@ import './blocks/index';
 import './css/global.css';
 import { Blockly } from './js/canvas';
 import { firebase, database } from './js/database_init';
+import './css/modal.css';
+import { modal, toggleModal, modalContinueButton } from './js/modal.js';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -89,6 +91,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       galleryRef.push(data);
+
+      toggleModal();
     });
   });
 

@@ -13,8 +13,8 @@ body {
 .grid {
 	display: grid;
 	list-style: none;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 36px;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	grid-gap: 28px;
 	padding: 0 32px;
 	place-items: center;
 }

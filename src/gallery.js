@@ -14,13 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
 				<a class="shot" href='/artwork.html?id=${id}' target="_blank">
 					<img src=${data[key].imageData}>
 				</a>
-        <div class="info">
-          <div class="user-info">
-            <span class="name">${name}</span>
-          </div>
-        </div>
 			</li>`
 			document.querySelector('.grid').innerHTML += item;
 		}
 	});
 });
+
+// User info currently hide
+// <div class="info">
+//   <div class="user-info">
+//     <span class="name">${name}</span>
+//   </div>
+// </div>
